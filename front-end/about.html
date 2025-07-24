@@ -6,9 +6,97 @@
         <link rel="stylesheet" href="about.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--This improves SEO and makes the website the same scale no matter the device-->
         <meta name="description" content="Ziyuanyuan Art Portfolio" /> <!--Improves accessibility, description of contents of website-->
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
         
     </head>
     <body>
+        <!-- NAVBAR -->
+        <header>
+            <nav id = "navbar">
+                <!-- TO ENSURE MARGINS ARE SAME WITH REST OF PAGE -->
+                <div class="nav-content">
+                    <h1 id="navHead">JUDY ZIYUAN GAO</h1>
+
+
+
+
+                    <!-- Navbar for PC -->
+                    <ul id="navList">
+                        <li><a target="_blank" href="index.html">GALLERY</a></li>
+                        <li><a target="_blank" href="visualDevelopment.html">VISUAL<br/>DEVELOPMENT</a></li>
+                        <li><a target="_blank" href="characterDesign.html">CHARACTER<br/>DESIGN</a></li>
+                        <li><a target="_blank" href="storyboard.html">STORYBOARD</a></li>
+                        <li><a target="_blank" href="illustration.html">ILLUSTRATION</a></li>
+                        <li><a target="_blank" href="about.html">ABOUT</a></li>
+                    </ul>
+
+
+                    
+                </div>
+                <!--Dropdown Navbar Menu for Mobile with ☰ button -->
+                <div id="navbarMob">
+                    <button id="menuButton">☰</button>
+                    <ul id="listDown">
+                        <li><a target="_blank" href="index.html">GALLERY</a></li>
+                        <li><a target="_blank" href="visualDevelopment.html">VISUAL DEVELOPMENT</a></li>
+                        <li><a target="_blank" href="characterDesign.html">CHARACTER DESIGN</a></li>
+                        <li><a target="_blank" href="storyboard.html">STORYBOARD</a></li>
+                        <li><a target="_blank" href="illustration.html">ILLUSTRATION</a></li>
+                        <li><a target="_blank" href="about.html">ABOUT</a></li>
+                    </ul>   
+                </div>
+            </nav>
+        </header>
+
+
+        <!-- SCRIPT FOR NAVBAR OPENING AND CLOSING NAVBAR DEPENDING ON SCROLL -->
+        <script>
+            const navbar = document.getElementById('navbar');
+            let lastScrollY = window.scrollY;
+
+
+            window.addEventListener('scroll', () => {
+                const currentScrollY = window.scrollY;
+
+
+                if (currentScrollY > lastScrollY) {
+                // Scrolling down
+                navbar.style.opacity = '0';
+                } else {
+                // Scrolling up
+                navbar.style.opacity = '1';
+                }
+
+
+                lastScrollY = currentScrollY;
+            });
+        </script>
+
+
+        <!-- SCRIPT FOR HAMBURGER MENU FOR MOBILE DISPLAY -->
+        <script>
+            const menuButton = document.getElementById('menuButton');
+            const listDown = document.getElementById('listDown');
+
+
+            // Toggle on button click
+            menuButton.addEventListener('click', (event) => {
+                listDown.classList.toggle('active');
+                event.stopPropagation(); // Prevent the event from bubbling up to the document
+            });
+
+
+            // Clicking anywhere else closes the dropdown
+            document.addEventListener('click', (event) => {
+                const isClickInsideMenu = listDown.contains(event.target);
+                const isClickOnButton = menuButton.contains(event.target);
+
+
+                if (!isClickInsideMenu && !isClickOnButton) { // if menu is open and click not inside menu then retract
+                    listDown.classList.remove('active'); // remove active state (make max height 0 again)
+                }
+            });
+        </script>
     </body>
 </html>
 

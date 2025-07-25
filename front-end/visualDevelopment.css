@@ -47,6 +47,10 @@ body {
     object-fit: cover;
 }
 
+#navbar a.active {
+    color: #5471BC;
+
+}
 /* ---------------------------------------------- for header */
 
 #navbar {

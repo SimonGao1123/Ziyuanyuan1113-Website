@@ -47,8 +47,6 @@ body {
     margin-right: auto;
     margin-top: 150px;
     padding: 70px;
-    /*border: 2px solid black;*/
-    /*border-radius:12px;*/
 }
 
 
@@ -64,7 +62,7 @@ body {
 }
 
 a:hover img{
-    filter: blur(2px);
+    filter: brightness(50%);
     transition-property: filter;
     transition-duration: 0.2s;
     transition-timing-function: ease-in;
@@ -73,6 +71,7 @@ a:hover img{
 
 a:hover .hover-text {
     opacity: 1;
+    color: #5471BC;
 }
 
 .hover-text{
@@ -106,6 +105,26 @@ a:hover .hover-text {
     object-fit: cover;
     object-position: top;
     z-index: 1;
+}
+
+.image-text-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(250, 246, 234, 0);
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+.image-text-container:hover::before {
+    background-color: rgba(250, 246, 234, 1);
+}
+
+#navbar a.active {
+    color: #5377d3;
 }
 
 

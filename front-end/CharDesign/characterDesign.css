@@ -4,9 +4,106 @@ body {
     background-color: #FAF6EA;
 }
 
+.section.one {
+    width: 85%;
+    margin: 225px auto;
+    
+}
+.default-selector {
+    width: 100%;
+}
+.main-img {
+    position: relative;
+    width: 100%;
+    /* can adjust depending on largest height of the image in the specific slideshow */
+    height: 800px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.main-img img {
+    /* can adjust depending on largest height of the image in the specific slideshow */
+    max-height: 800px;
+}
+.img-selector {
+    width: 100%;
+    display: flex;
+    max-height: 90px;
+    gap: 10px;
+}
+.img-selector img {
+    width: 90px;
+    height: 90px; 
+    object-fit: cover;
+}
+.img-selector>img:hover {
+    cursor: pointer;
+}
+
+/* image slideshow left and right buttons */
+.prev {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    border: none;
+    font-size: 4vw;
+    color: white;
+    background-color: transparent;
+    text-align: left;
+    width: 40%;
+    height: 99%;
+    padding-left: 3vw;
+}
+
+.next {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    font-size: 4vw;
+    color: white;
+    background-color: transparent;
+    text-align: right;
+    padding-right: 3vw;
+    width: 40%;
+    height: 99%;
+    padding-left: 2vw;
+    z-index: 2;
+
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+}
+
+.next:hover, .prev:hover, .next:hover .arrow, .prev:hover .arrow {
+    opacity: 1;
+    transition: opacity 0.2s ease-in;
+}
+.arrow {
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;    
+    transition: opacity 0.2s ease-in;
+}
+/* for transition for changing images in selector */
+.invis {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
 #navbar a.active {
     color: #5471BC;
 
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;   
+}
+
+.socials img:hover {
+    filter: brightness(0) saturate(100%) invert(72%) sepia(66%) saturate(6139%) hue-rotate(204deg) brightness(87%) contrast(88%);
 }
 /* ---------------------------------------------- for header */
 

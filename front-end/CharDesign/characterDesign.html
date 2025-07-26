@@ -97,6 +97,85 @@
                 }
             });
         </script>
+
+        <div id="gallery">
+            <div class="section one">
+                <!-- default image to be shown in selector -->
+                 <div class="main-img">
+                    <button class="next"><span class="arrow">&#10095;</span></button>
+                    <button class="prev"><span class="arrow">&#10094;<span></button>
+                    <img class = "default-selector" src="https://picsum.photos/seed/101/300/200"> 
+                </div>
+                <div class="img-selector">
+                    <!-- image slideshow underneath -->
+                    <img src="https://picsum.photos/seed/101/300/200">
+                    <img src="https://placebear.com/300/200">
+                    <img src="https://dummyimage.com/300x200/000/fff.png&text=Random+Image">
+                    <img src="https://images.saatchiart.com/saatchi/85495/art/3406634/2476521-BIBDZXKS-7.jpg">
+                    <img src="https://www.leticialampert.com.br/wp-content/uploads/2016/02/random-city-4-shanghai_yangshuo-dubai-portoaegre-1-1920x1200.jpg">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- IMAGE ARRAY TO SELECT THROUGH IMAGES IN MINI SLIDESHOW -->
+        <script>
+            const selectorImg = document.querySelector('.default-selector');
+            const prevB = document.querySelector('.prev');
+            const nextB = document.querySelector('.next');
+            const imgSelector = document.querySelectorAll('.img-selector img');
+
+            const imgArr = Array.from(imgSelector).map(img => img.src);
+
+            let currInd = 0;
+
+            imgSelector.forEach((img, index) => {
+                img.addEventListener('click', () => {
+                    selectorImg.classList.add('invis');
+                    setTimeout (()=> {
+                        selectorImg.src = imgArr[index];
+                        currInd = index;
+                        selectorImg.classList.remove('invis');
+                    }, 200);
+                })
+            });
+
+            prevB.addEventListener('click', ()=> {
+                selectorImg.classList.add('invis');
+                currInd = (imgArr.length + (currInd - 1)) % imgArr.length;
+                
+                
+                setTimeout (()=> {
+                        
+                        selectorImg.src = imgArr[currInd];
+                        selectorImg.classList.remove('invis');
+                    }, 200);
+            });
+
+            nextB.addEventListener('click', ()=> {
+                selectorImg.classList.add('invis');
+                setTimeout (()=> {
+                        currInd =  (currInd + 1) % imgArr.length;
+                        selectorImg.src = imgArr[currInd];
+                        selectorImg.classList.remove('invis');
+                    }, 200);
+            });
+            
+        </script>
+
+        <footer>
+            <div class="socials">
+                <a href="https://x.com/ziyuanyuan1113" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Twitter_bird_logo_black.svg" alt="Twitter" width="30px" height="30px">
+                </a>
+                <a href="https://www.instagram.com/ziyuanyuan1113/?hl=en" target="_blank">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/018/930/460/small/instagram-logo-instagram-icon-transparent-free-png.png" alt="Instagram" width="60px" height="60px">
+                </a>
+                <a href="https://bsky.app/profile/ziyuanyuan1113.bsky.social" target="_blank">
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/bluesky.svg" alt="Blue sky" width="30" height="30">
+                </a>
+            </div>
+        </footer>
     </body>
 </html>
 

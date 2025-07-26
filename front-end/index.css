@@ -112,6 +112,13 @@ a:hover .hover-text {
     gap: 30px;
     margin-bottom: 50px;   
 }
+.socials a {
+    width: 30px;
+    height: 30px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
 
 .socials img:hover {
     filter: brightness(0) saturate(100%) invert(72%) sepia(66%) saturate(6139%) hue-rotate(204deg) brightness(87%) contrast(88%);

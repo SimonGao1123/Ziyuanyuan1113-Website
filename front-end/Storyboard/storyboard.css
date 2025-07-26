@@ -14,9 +14,43 @@ body {
     gap: 30px;
     margin-bottom: 50px;   
 }
+.socials a {
+    width: 30px;
+    height: 30px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
 
 .socials img:hover {
     filter: brightness(0) saturate(100%) invert(72%) sepia(66%) saturate(6139%) hue-rotate(204deg) brightness(87%) contrast(88%);
+}
+
+iframe {
+    border: 1px solid black;
+    background: rgba(0, 0, 0, 0.1) padding-box;
+    border-radius: 6px;
+    width: 45%;
+    height: auto;
+    aspect-ratio: 560 / 395;
+}
+.gallery {
+    width: 100%;
+    margin: 225px auto;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+    
+}
+.storyboard {
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 /* ---------------------------------------------- for header */
 

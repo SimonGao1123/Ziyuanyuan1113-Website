@@ -4,32 +4,35 @@ body {
     background-color: #FAF6EA;
 }
 
+
 .section.one {
     width: 85%;
     margin: 225px auto;
     
 }
-.default-selector {
-    width: 100%;
-}
 .main-img {
     position: relative;
-    width: 100%;
     /* can adjust depending on largest height of the image in the specific slideshow */
     height: 800px;
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-bottom: 10px;
+    width: 100%;
 }
 .main-img img {
     /* can adjust depending on largest height of the image in the specific slideshow */
     max-height: 800px;
+    min-width: 50%;
+    max-width: auto;
 }
 .img-selector {
     width: 100%;
     display: flex;
     max-height: 90px;
     gap: 10px;
+    justify-content: center;
+    align-items: center;
 }
 .img-selector img {
     width: 90px;
@@ -46,13 +49,14 @@ body {
     z-index: 2;
     top: 0;
     border: none;
-    font-size: 4vw;
+    font-size: 3vw;
     color: white;
     background-color: transparent;
     text-align: left;
     width: 40%;
-    height: 99%;
+    height: 100%;
     padding-left: 3vw;
+    left: 0;
 }
 
 .next {
@@ -60,13 +64,13 @@ body {
     top: 0;
     right: 0;
     border: none;
-    font-size: 4vw;
+    font-size: 3vw;
     color: white;
     background-color: transparent;
     text-align: right;
     padding-right: 3vw;
     width: 40%;
-    height: 99%;
+    height: 100%;
     padding-left: 2vw;
     z-index: 2;
 
@@ -100,6 +104,13 @@ body {
     align-items: center;
     gap: 30px;
     margin-bottom: 50px;   
+}
+.socials a {
+    width: 30px;
+    height: 30px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
 }
 
 .socials img:hover {

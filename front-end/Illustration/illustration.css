@@ -8,10 +8,129 @@ body {
     color: #5471BC;
 
 }
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    gap: 20px;
+    padding: 0px;
+    justify-items: center;
+    margin-top: 200px;
+    margin-bottom: 50px;
+}
+
+.gallery-container img {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    max-width: 1400px;
+    
+    
+    object-fit: cover;
+    /* border-width: 5px;
+    border-style: solid;
+    border-color: rgb(206, 34, 34); */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;   
+}
+
+.socials img:hover {
+    filter: brightness(0) saturate(100%) invert(72%) sepia(66%) saturate(6139%) hue-rotate(204deg) brightness(87%) contrast(88%);
+}
+
+.click-to-view-area {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    max-width: 1400px; 
+}
+
+/* --------------------- slideshow styles ------------------------*/
+.slideshow {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: flex;
+    /* changes opacity for fade in */
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(250, 246, 234, 0.8);
+    
+}
+.slideshow-img {
+    width: 85vw;
+    height: auto;
+    max-height: 100vh;
+    object-fit: contain;
+    transition: opacity 0.2s ease-in;
+
+}
+.show {
+    opacity: 1;
+    z-index: 4;
+
+    transition: opacity 0.2s ease-in;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    color: darkgray;
+    z-index: 5;
+    width: 10%;
+    height: 10%;
+}
+.prev {
+    position: absolute;
+    top: 10%;
+    left: 2vw;
+    font-size: 3vw;
+    border: none;
+    background-color: transparent;
+    color: darkgray;
+    width: 47%;
+    height: 80%;
+    text-align: left;
+    
+}
+.next {
+    position: absolute;
+    top: 10%;
+    right: 2vw;
+    font-size: 3vw;
+    border: none;
+    background-color: transparent;
+    color: darkgray;
+    width: 47%;
+    height: 80%;
+    text-align: right;
+    
+}
+.next:hover, .prev:hover, .close:hover {
+    color: black;
+}
+
 /* ---------------------------------------------- for header */
-
-
-
 
 #navbar {
     background-color: #FAF6EA;

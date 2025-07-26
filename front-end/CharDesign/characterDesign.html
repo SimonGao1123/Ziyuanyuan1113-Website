@@ -97,6 +97,71 @@
                 }
             });
         </script>
+
+        <div id="gallery">
+            <div class="section one">
+                <!-- default image to be shown in selector -->
+                 <div class="main-img">
+                    <button class="next"><span class="arrow">&#10095;</span></button>
+                    <button class="prev"><span class="arrow">&#10094;<span></button>
+                    <img class = "default-selector" src="https://picsum.photos/seed/101/300/200"> 
+                </div>
+                <div class="img-selector">
+                    <!-- image slideshow underneath -->
+                    <img src="https://picsum.photos/seed/101/300/200">
+                    <img src="https://placebear.com/300/200">
+                    <img src="https://dummyimage.com/300x200/000/fff.png&text=Random+Image">
+                    <img src="https://images.saatchiart.com/saatchi/85495/art/3406634/2476521-BIBDZXKS-7.jpg">
+                    <img src="https://www.leticialampert.com.br/wp-content/uploads/2016/02/random-city-4-shanghai_yangshuo-dubai-portoaegre-1-1920x1200.jpg">
+                </div>
+            </div>
+
+        </div>
+
+        <!-- IMAGE ARRAY TO SELECT THROUGH IMAGES IN MINI SLIDESHOW -->
+        <script>
+            const selectorImg = document.querySelector('.default-selector');
+            const prevB = document.querySelector('.prev');
+            const nextB = document.querySelector('.next');
+            const imgSelector = document.querySelectorAll('.img-selector img');
+
+            const imgArr = Array.from(imgSelector).map(img => img.src);
+
+            let currInd = 0;
+
+            imgSelector.forEach((img, index) => {
+                img.addEventListener('click', () => {
+                    selectorImg.classList.add('invis');
+                    setTimeout (()=> {
+                        selectorImg.src = imgArr[index];
+                        currInd = index;
+                        selectorImg.classList.remove('invis');
+                    }, 200);
+                })
+            });
+
+            prevB.addEventListener('click', ()=> {
+                selectorImg.classList.add('invis');
+                currInd = (imgArr.length + (currInd - 1)) % imgArr.length;
+                
+                
+                setTimeout (()=> {
+                        
+                        selectorImg.src = imgArr[currInd];
+                        selectorImg.classList.remove('invis');
+                    }, 200);
+            });
+
+            nextB.addEventListener('click', ()=> {
+                selectorImg.classList.add('invis');
+                setTimeout (()=> {
+                        currInd =  (currInd + 1) % imgArr.length;
+                        selectorImg.src = imgArr[currInd];
+                        selectorImg.classList.remove('invis');
+                    }, 200);
+            });
+            
+        </script>
     </body>
 </html>
 

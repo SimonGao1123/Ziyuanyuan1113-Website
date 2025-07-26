@@ -94,20 +94,23 @@ body {
     color: black;
 }
 
+
+.image {
+    width: 100%;
+}
+.image:hover {
+    cursor: zoom-in;
+}
+#navbar a.active {
+    color: #5471BC;
+
+}
 .section.one {
     width: 100%;
     display:flex;
     flex-direction: column;
     gap: 20px;
     
-}
-.image {
-    width: 100%;
-}
-
-#navbar a.active {
-    color: #5471BC;
-
 }
 
 

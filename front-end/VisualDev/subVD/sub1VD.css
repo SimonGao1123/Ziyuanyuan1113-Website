@@ -16,7 +16,6 @@ body {
     display: flex;
     /* changes opacity for fade in */
     opacity: 0;
-    transition: opacity 0.2s ease-in;
 
     justify-content: center;
     align-items: center;
@@ -113,7 +112,17 @@ body {
     
 }
 
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;   
+}
 
+.socials img:hover {
+    filter: brightness(0) saturate(100%) invert(72%) sepia(66%) saturate(6139%) hue-rotate(204deg) brightness(87%) contrast(88%);
+}
 /* ---------------------------------------------- for header */
 
 

@@ -15,14 +15,15 @@ body {
 .main-img {
     position: relative;
     width: 100%;
-    height: 700px;
+    /* can adjust depending on largest height of the image in the specific slideshow */
+    height: 800px;
     display: flex;
     align-items: center;
     margin-bottom: 10px;
 }
 .main-img img {
     /* can adjust depending on largest height of the image in the specific slideshow */
-    max-height: 700px;
+    max-height: 800px;
 }
 .img-selector {
     width: 100%;
@@ -31,7 +32,6 @@ body {
     gap: 10px;
 }
 .img-selector img {
-    /* ADJUST BASED ON NUMBER OF IMAGES (currently: 5) */
     width: 90px;
     height: 90px; 
     object-fit: cover;
@@ -92,6 +92,18 @@ body {
 #navbar a.active {
     color: #5471BC;
 
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;   
+}
+
+.socials img:hover {
+    filter: brightness(0) saturate(100%) invert(72%) sepia(66%) saturate(6139%) hue-rotate(204deg) brightness(87%) contrast(88%);
 }
 /* ---------------------------------------------- for header */
 

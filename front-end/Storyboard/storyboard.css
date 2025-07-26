@@ -32,7 +32,6 @@ body {
 
 /* code to style embedded slideshow */
 iframe {
-    border: 1px solid black;
     background: rgba(0, 0, 0, 0.1) padding-box;
     border-radius: 6px;
     width: 100%;

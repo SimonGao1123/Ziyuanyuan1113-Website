@@ -101,23 +101,19 @@
 
         <div id="gallery">
             <!-- THE 'FIRST' AND 'ONE' CLASS IS TO PREPARE FOR FUTURE SECTIONS WITH DIFFERENT FORMATS -->
-             <div class="container first">
-                <div class="section one">
-                        <img class="image" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"/>
-                        <img class="image" src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"/>
-                        <img class="image" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"/>
-                    </div>
-                    <!--HIDDEN CONTAINER FOR SLIDESHOW-->
-                    <div class="slideshow">
-                        <button class="close">&times;</button>
-                        <button class="next">&#10095;</button>
-                        <button class="prev">&#10094;</button>
-                        <img class="slideshow-img"/>
-                    </div>
-                </div>
+            <div class="section one">
+                <img class="image" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"/>
+                <img class="image" src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"/>
+                <img class="image" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"/>
             </div>
-
-
+                    
+            <!--HIDDEN CONTAINER FOR SLIDESHOW-->
+            <div class="slideshow">
+                <button class="close">&times;</button>
+                <button class="next">&#10095;</button>
+                <button class="prev">&#10094;</button>
+                <img class="slideshow-img"/>
+            </div>
         </div>
 
 
@@ -153,7 +149,7 @@
                     slideshow.classList.add('show');
                     slideshowImg.classList.remove('invis'); // this will cause the fading effect when switching images 
 
-                }, 100);
+                }, 200);
             }
 
             // each image becomes a button and when they are clicked 

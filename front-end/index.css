@@ -34,7 +34,6 @@ body {
 }
 
 .sample img {
-    max-height: 450px;  
     width: 100%;
     height: 100%;     
     object-fit: cover;
@@ -43,9 +42,7 @@ body {
 
 .sample-gallery {
     width: 85%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 150px;
+    margin: 150px auto 225px auto;
     padding: 70px;
 }
 
@@ -87,18 +84,18 @@ a:hover .hover-text {
 .image-text-container {
     display: inline-block;
     position: relative;
-    max-height: 300px;  
     width: 100%;
     height: auto;   
 }
 
 .sample img {
-    max-height: 300px;  
     width: 100%;
     height: auto;     
     object-fit: cover;
     object-position: top;
     z-index: 1;
+    max-height: 500px;
+
 }
 
 #navbar a.active {
@@ -112,9 +109,21 @@ a:hover .hover-text {
     gap: 30px;
     margin-bottom: 50px;   
 }
+.socials a {
+    width: 30px;
+    height: 30px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
 
 .socials img:hover {
     filter: brightness(0) saturate(100%) invert(72%) sepia(66%) saturate(6139%) hue-rotate(204deg) brightness(87%) contrast(88%);
+    opacity: 1;
+
+}
+.socials>a>img {
+    opacity: 0.5;
 }
 
 /* ---------------------------------------------- for header */

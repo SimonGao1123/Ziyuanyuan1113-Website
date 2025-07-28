@@ -36,15 +36,11 @@ body {
     display: inline-block;
     width: 100%;
     height: auto;
-    
-    
     object-fit: cover;
     /* border-width: 5px;
     border-style: solid;
     border-color: rgb(206, 34, 34); */
     transition: transform 0.3s ease, filter 0.3s ease;
-
-    /* can adjust max width if needed */
     max-width: 85vw;
 }
 

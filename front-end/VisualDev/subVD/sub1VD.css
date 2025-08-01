@@ -41,9 +41,13 @@ body {
     transition: opacity 0.2s ease-in;
     /* This applies to the image in the slideshow to similate the effect when CHANGING images*/
 }
-#gallery {
+.main {
     width: 85%;
-    margin: 225px auto;
+    margin: 150px auto 225px auto;
+    padding: 70px;
+    box-sizing: border-box;
+}
+#gallery {
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -110,6 +114,9 @@ body {
     flex-direction: column;
     gap: 20px;
     
+}
+.section.two {
+    display: flex;
 }
 
 .socials {

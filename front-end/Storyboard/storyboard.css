@@ -22,6 +22,127 @@ body {
     justify-content: center;
     
 }
+
+/* SLIDESHOW CODE */
+/* ensure each .storyboard is a stacking context */
+.storyboard {
+  position: relative;
+  /* no overflow so overlay is fully visible */
+}
+
+/* iframe sits below overlay */
+.storyboard .speakerdeck-iframe {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* thumbnail row */
+.storyboard .thumbs {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+.storyboard .thumbs img {
+  cursor: zoom-in;
+  width: 100%;       /* fill the width of .thumbs container */
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* the overlay lightbox */
+.storyboard .slideshow {
+  position: fixed;        /* cover viewport */
+  top: 0; 
+  left: 0;
+  width: 100vw;           /* full viewport width */
+  height: 100vh;          /* full viewport height */
+  background: rgba(250,246,234,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 4;           /* ensure it’s on top of everything */
+}
+
+.storyboard .slideshow.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* slide image */
+.storyboard .slideshow .slide-img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  transition: opacity 0.2s ease;
+}
+
+/* nav buttons */
+.storyboard .slideshow button {
+  position: absolute;
+  background: transparent;
+  border: none;
+  font-size: 2.5rem;
+  color: #333;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+/* SLIDESHOW BUTTONS — fullscreen style */
+
+.storyboard .slideshow .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    color: darkgray;
+    z-index: 5;
+    width: 10%;
+    height: 10%;
+}
+
+.storyboard .slideshow .prev {
+    position: absolute;
+    top: 10%;
+    left: 2vw;
+    font-size: 3vw;
+    border: none;
+    background-color: transparent;
+    color: darkgray;
+    width: 47%;
+    height: 80%;
+    text-align: left;
+}
+
+.storyboard .slideshow .next {
+    position: absolute;
+    top: 10%;
+    right: 2vw;
+    font-size: 3vw;
+    border: none;
+    background-color: transparent;
+    color: darkgray;
+    width: 47%;
+    height: 80%;
+    text-align: right;
+}
+
+/* hover state */
+.storyboard .slideshow .close:hover,
+.storyboard .slideshow .prev:hover,
+.storyboard .slideshow .next:hover {
+    color: black;
+}
+
 .socials>a>img {
     opacity: 0.5;
 }
@@ -32,7 +153,6 @@ body {
 
 /* code to style embedded slideshow */
 iframe {
-    border: 1px solid black;
     background: rgba(0, 0, 0, 0.1) padding-box;
     border-radius: 6px;
     width: 100%;
@@ -41,16 +161,20 @@ iframe {
 }
 
 
+.main {
+  width: 50%;
+  margin: 150px auto 225px auto;
+  padding: 70px;
+  box-sizing: border-box;
+}
+
+/* no hard width or auto margin here */
 .gallery {
-    width: 50%;
-    margin: 225px auto;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 50px;
-    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
 }
 #introduction-img {
     width: 100%;

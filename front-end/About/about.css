@@ -28,9 +28,89 @@ body {
     filter: brightness(0) saturate(100%) invert(72%) sepia(66%) saturate(6139%) hue-rotate(204deg) brightness(87%) contrast(88%);
     opacity: 1;
 }
+
 .socials>a>img {
     opacity: 0.5;
 }
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    margin: 0 auto 225px auto;
+    padding: 70px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 140px;
+    margin-bottom: 70px;
+    width: 60vw;
+    gap: 2vw;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    min-width: 300px;
+}
+.image {
+    width: 100%;
+    height: 100%;
+    min-width: 300px;
+}
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .image,
+    .image img {
+        min-height: 250px; /* still preserve some vertical space */
+    }
+}
+
+.container p {
+    font-size: clamp(0.7rem, 4vw, 1.8rem);
+    margin-bottom: 2vh;
+}
+
+.padding {
+    padding: 2.80vw;
+}
+
+.buttons-array {
+    display: flex;
+    gap: 1.56vw;
+    margin-top: auto;
+}
+.text {
+    height: 100%;
+}
+.button {
+    background-color: #487EE3;
+    padding: 1vh 0.7vw;
+    border-radius: 0.26vw;
+}
+@media (min-width: 1200px) {
+    .image img {
+        max-height: 80vh;
+    }
+}
+.button a {
+    
+    font-size: clamp(0.7rem, 4vw, 1.8rem);
+}
+.button a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 /* ---------------------------------------------- for header */
 
 

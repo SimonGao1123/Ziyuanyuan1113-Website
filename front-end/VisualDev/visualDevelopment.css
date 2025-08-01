@@ -3,10 +3,14 @@ body {
     font-family: 'Nunito', sans-serif;
     background-color: #FAF6EA;
 }
-
-.sample-gallery {
+.main {
     width: 85%;
-    margin: 225px auto;
+    margin: 150px auto 225px auto;
+    padding: 70px;
+}
+
+/* Now your grid sits inside .main */
+.sample-gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;

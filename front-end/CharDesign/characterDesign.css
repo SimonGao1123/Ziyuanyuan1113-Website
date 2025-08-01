@@ -1,328 +1,304 @@
+/* ----------------------------------------------
+   Global Resets & Base Styles
+---------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-    font-family: 'Nunito', sans-serif;
-    background-color: #FAF6EA;
+  font-family: 'Nunito', sans-serif;
+  background-color: #FAF6EA;
+  color: #333;
+  line-height: 1.5;
 }
 
+/* ----------------------------------------------
+   Shared Page Frame
+---------------------------------------------- */
+.main {
+  width: 85%;
+  margin: 150px auto 225px auto;
+  padding: 70px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+/* ----------------------------------------------
+   Section One Layout (Character Design)
+---------------------------------------------- */
 .section.one {
-    width: 85%;
-    margin: 225px auto;
-    
-}
-.main-img {
-    position: relative;
-    /* can adjust depending on largest height of the image in the specific slideshow */
-    height: 800px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-    width: 100%;
-}
-.main-img img {
-    /* can adjust depending on largest height of the image in the specific slideshow */
-    max-height: 800px;
-    min-width: 50%;
-    max-width: auto;
-}
-.img-selector {
-    width: 100%;
-    display: flex;
-    max-height: 90px;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-}
-.img-selector img {
-    width: 90px;
-    height: 90px; 
-    object-fit: cover;
-}
-.img-selector>img:hover {
-    cursor: pointer;
+  width: 100%;
+  padding-bottom: 50px; /* adjust inner spacing if desired */
 }
 
-/* image slideshow left and right buttons */
+/* ----------------------------------------------
+   Main Preview Image
+---------------------------------------------- */
+.main-img {
+  position: relative;
+  height: 800px; /* adjust for your largest image height */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* Prevent the main preview from becoming too small */
+.main-img img {
+  min-width: 300px;    /* never narrower than 300px */
+  min-height: 300px;   /* never shorter than 300px */
+}
+
+/* ----------------------------------------------
+   Thumbnail Selector Row
+---------------------------------------------- */
+.img-selector {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Ensure thumbnails in the selector stay a usable size */
+.img-selector img {
+  width: 90px;
+  height: 90px;
+  min-width: 60px;     /* never narrower than 60px */
+  min-height: 60px;    /* never shorter than 60px */
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* ----------------------------------------------
+   Navigation Buttons on Main Preview
+---------------------------------------------- */
+.prev,
+.next {
+  position: absolute;
+  top: 0;
+  border: none;
+  background: transparent;
+  font-size: 3vw;
+  color: white;
+  width: 40%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3vw;
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+
 .prev {
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    border: none;
-    font-size: 3vw;
-    color: white;
-    background-color: transparent;
-    text-align: left;
-    width: 40%;
-    height: 100%;
-    padding-left: 3vw;
-    left: 0;
+  left: -10vw;
+  text-align: left;
 }
 
 .next {
-    position: absolute;
-    top: 0;
-    right: 0;
-    border: none;
-    font-size: 3vw;
-    color: white;
-    background-color: transparent;
-    text-align: right;
-    padding-right: 3vw;
-    width: 40%;
-    height: 100%;
-    padding-left: 2vw;
-    z-index: 2;
-
-    opacity: 0;
-    transition: opacity 0.2s ease-in;
+  right: -10vw;
+  text-align: right;
 }
 
-.next:hover, .prev:hover, .next:hover .arrow, .prev:hover .arrow {
-    opacity: 1;
-    transition: opacity 0.2s ease-in;
+.prev:hover,
+.next:hover,
+.prev:hover .arrow,
+.next:hover .arrow {
+  opacity: 1;
 }
+
 .arrow {
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0;    
-    transition: opacity 0.2s ease-in;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.2em 0.5em;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
 }
-/* for transition for changing images in selector */
+
+/* ----------------------------------------------
+   Invisible Transition Helper
+---------------------------------------------- */
 .invis {
-    opacity: 0;
-    transition: opacity 0.3s ease-in;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
 }
 
+/* ----------------------------------------------
+   Active Navbar Link
+---------------------------------------------- */
 #navbar a.active {
-    color: #5471BC;
-
+  color: #5471BC;
 }
 
+/* ----------------------------------------------
+   Social Icons
+---------------------------------------------- */
 .socials {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    margin-bottom: 50px;   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 50px;
 }
+
 .socials a {
-    width: 30px;
-    height: 30px;
-    display: flex; 
-    align-items: center;
-    justify-content: center;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socials > a > img {
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
 }
 
 .socials img:hover {
-    filter: brightness(0) saturate(100%) invert(72%) sepia(66%) saturate(6139%) hue-rotate(204deg) brightness(87%) contrast(88%);
-    opacity: 1;
-
+  opacity: 1;
+  filter: brightness(0) saturate(100%) invert(72%) sepia(66%)
+    saturate(6139%) hue-rotate(204deg) brightness(87%) contrast(88%);
 }
-.socials>a>img {
-    opacity: 0.5;
-}
-/* ---------------------------------------------- for header */
 
-
-
-
+/* ----------------------------------------------
+   Header & Navbar
+---------------------------------------------- */
 #navbar {
-    background-color: #FAF6EA;
-    display: flex;
-    align-items: center;
-    position: fixed;
-    width: 100vw;
-    top: -17px;
-    left: 0;
-    padding-top: 25px;
-        
-    margin-right: 0;
-
-    height: 100px;
-    justify-content: center;
-
-    /* animation when appearing and disappearing (affected by scrolling) */
-    opacity: 1;
-    transition: opacity 0.15s linear;
-    
-    /* ADJUST BASED ON Z-INDEX OF THE REST OF WEBPAGE (ALWAYS MAKE IT 1 HIGHER) */
-    z-index: 3;
+  background-color: #FAF6EA;
+  position: fixed;
+  top: -17px;
+  left: 0;
+  width: 100vw;
+  height: 100px;
+  padding-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.15s linear;
+  z-index: 3;
 }
 
-
-
-
-/* Centers PC display using padding */
 .nav-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 85%;
-    margin: 0 auto;
-    padding-left: 8px;    
-    box-sizing: border-box;
-    height: 100px;
-
-
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
 }
-
-
-
 
 #navHead {
-    margin: 0;
-    font-size: clamp(32px, 2vw, 64px); 
-    color: #5471BC;
-    font-weight: normal;
-    
+  font-size: clamp(32px, 2vw, 64px);
+  color: #5471BC;
+  font-weight: normal;
 }
 
-
-
-
-/* PC DISPLAY */
-#navList {    
-    display: flex;
-
-
-    list-style: none;
-    margin-left: auto;
-    padding: 0;
-
-
-
-
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 75%;
-    margin-right: 27px;
-    position: relative;
-    right: -4.8vw;
+#navList {
+  display: flex;
+  list-style: none;
+  margin-left: auto;
+  padding: 0;
+  width: 75%;
+  margin-right: 27px;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  right: -4.8vw;
 }
-
-
-
 
 #navList li {
-    width: 16.666%;
-    height: 100%;
-    display: flex;
-    box-sizing: border-box;
+  width: 16.666%;
+  height: 100%;
+  display: flex;
 }
-/* ADDRESSES ONLY IN PC DISPLAY */
+
 #navList a {
-    font-size: clamp(14px, 0.8vw, 16px);
-    white-space: normal;   /* allows text to wrap */
-    word-break: break-word; /* breaks long words */
-    font-weight: 500;
+  font-size: clamp(14px, 0.8vw, 16px);
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 5px;
 }
 
+#navList a:hover {
+  color: #4874E3;
+}
 
-/* MOBILE DISPLAY */
+/* ----------------------------------------------
+   Mobile Navbar (Hamburger)
+---------------------------------------------- */
 #navbarMob {
-    margin-left: auto;
-    position: relative;
-    width: 100px;
-    height: 100%;
-    display: none; /* keeps mobile hidden until @media requirements met */
-    top: -7px;
+  display: none;
+  position: relative;
+  width: 100px;
+  height: 100%;
+  margin-left: auto;
+  top: -7px;
 }
-/* button */
+
 #menuButton {
-    width: 100%;
-    height: 100%;
-    font-size: 3em;
-    border: none;
-    font-weight: 400;
-    background-color: #FAF6EA;
-
+  width: 100%;
+  height: 100%;
+  font-size: 3em;
+  background: #FAF6EA;
+  border: none;
+  font-weight: 400;
 }
-/* hidden list until button clicked */
+
 #listDown {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    position: relative;
-    
-    /* beginning of animation (hidden and expands downwards) */
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.3s ease;
-
-    width: 300px;
-    
-    box-sizing: border-box;
-
-    right: 199px;
-    top: -9px;
-    padding: 0;
-
-    z-index: 1;
-    background-color: #FAF6EA;
-
-
-
-
+  list-style: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  max-height: 0;
+  width: 300px;
+  transition: max-height 0.3s ease;
+  right: 199px;
+  top: -9px;
+  background: #FAF6EA;
+  box-sizing: border-box;
+  z-index: 1;
 }
-/* slide down animation */
+
 #listDown.active {
-    max-height: 40vh;
+  max-height: 40vh;
 }
-
-
-
 
 #listDown li {
-    border: 1px solid black;
-    width: 100%;
-    height: calc(40vh/6);
-    box-sizing: border-box;
+  width: 100%;
+  height: calc(40vh / 6);
+  border: 1px solid black;
+  box-sizing: border-box;
 }
 
-
-
-
-/* DETERMINES WHETHER MOBILE OR PC DISPLAY (if screen is less than 1100px then transitions to mobile) */
 @media (max-width: 1200px) {
-    #navList {
-        display: none;
-    }
-    #navHead {
-        font-size: 5vw;
-    }
-    #navbarMob {
-        display: block;
-    }
-}
-
-
-
-
-/* SELECTS ALL LINKS IN NAVBAR */
-#navbar a {
-    text-decoration: none;
-    color: black;
-
-
-
-
-    padding: 0 5px;
-    width: 100%;
-    height: 100%;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-
-
-
-/* LINK STYLING FOR NAVBAR (TEMPORARY) */
-#navbar a:hover {
-    color: #4874E3;
+  #navList {
+    display: none;
+  }
+  #navHead {
+    font-size: 5vw;
+  }
+  #navbarMob {
+    display: block;
+  }
 }

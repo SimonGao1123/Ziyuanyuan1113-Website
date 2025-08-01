@@ -97,52 +97,153 @@
                 }
             });
         </script>
+        <div class="main">
+            <div class="gallery">
 
-        <div class = "gallery">
-            <div id="introduction-img">
-                <img src ="https://thumbs.dreamstime.com/b/excited-african-american-man-pointing-finger-background-template-text-stock-photo-149317403.jpg">
-            </div>
+                <!-- INTRODUCTORY IMAGE -->
+                <div id="introduction-img">
+                <img
+                    loading="lazy"
+                    src="https://t4.ftcdn.net/jpg/01/80/53/89/360_F_180538953_V4zIpN1eHqU1Rmv3J4EHcD8hYIiF5t3R.jpg"
+                    alt="Introduction">
+                </div>
 
-
-            <div class ="storyboard">
-                <div class ="description">
+                <!-- ===== STORYBOARD 1 ===== -->
+                <div class="storyboard">
+                <div class="description">
                     <h1>TITLE</h1>
-                    <p>short summary will be inserted here about the storyboard and may change in lenght but yea this is the spot for that</p>
+                    <p>
+                    short summary will be inserted here about the storyboard …
+                    </p>
                 </div>
-                <iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/d8f52043c18a4b64bd413534225b90ef" title="CONFRONTATION" allowfullscreen="true" data-ratio="1.4177215189873418"></iframe>
-                <div class="image">
-                    <img src="https://t4.ftcdn.net/jpg/01/80/53/89/360_F_180538953_V4zIpN1eHqU1Rmv3J4EHcD8hYIiF5t3R.jpg">
-                </div>
-            </div>
-            
-            
-            <div class ="storyboard">
-                <div class ="description">
-                    <h1>TITLE</h1>
-                    <p>short summary will be inserted here about the storyboard and may change in lenght but yea this is the spot for that</p>
-                </div>
-                <iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/4b0a08b02010434ab0d2bbe022b820a0" title="ROOFTOP CHASE" allowfullscreen="true" data-ratio="1.8543046357615893"></iframe>
-                <div class="image">
-                    <img src="https://t4.ftcdn.net/jpg/01/80/53/89/360_F_180538953_V4zIpN1eHqU1Rmv3J4EHcD8hYIiF5t3R.jpg">
-                    <img src="https://t4.ftcdn.net/jpg/01/80/53/89/360_F_180538953_V4zIpN1eHqU1Rmv3J4EHcD8hYIiF5t3R.jpg">
-                </div>
-            </div>
-        </div>
 
+                <!-- SpeakerDeck embed -->
+                <iframe
+                    class="speakerdeck-iframe"
+                    frameborder="0"
+                    src="https://speakerdeck.com/player/d8f52043c18a4b64bd413534225b90ef"
+                    title="CONFRONTATION"
+                    allowfullscreen="true"
+                    data-ratio="1.4177215189873418">
+                </iframe>
+
+                <!-- Thumbnails -->
+                <div class="thumbs">
+                    <img
+                    loading="lazy"
+                    src="https://t4.ftcdn.net/jpg/01/80/53/89/360_F_180538953_V4zIpN1eHqU1Rmv3J4EHcD8hYIiF5t3R.jpg"
+                    alt="Storyboard 1 thumbnail">
+                </div>
+
+                <!-- Lightbox overlay FOR ONLY ONE PICTURE-->
+                <div class="slideshow">
+                    <button class="close">&times;</button>
+                    <img class="slide-img" loading="lazy" alt="Slide">
+                </div>
+                </div>
+
+
+                <!-- ===== STORYBOARD 2 ===== -->
+                <div class="storyboard">
+                <div class="description">
+                    <h1>TITLE</h1>
+                    <p>
+                    short summary will be inserted here about the storyboard …
+                    </p>
+                </div>
+
+                <iframe
+                    class="speakerdeck-iframe"
+                    frameborder="0"
+                    src="https://speakerdeck.com/player/4b0a08b02010434ab0d2bbe022b820a0"
+                    title="ROOFTOP CHASE"
+                    allowfullscreen="true"
+                    data-ratio="1.8543046357615893">
+                </iframe>
+
+                <div class="thumbs">
+                    <img
+                    loading="lazy"
+                    src="https://t4.ftcdn.net/jpg/01/80/53/89/360_F_180538953_V4zIpN1eHqU1Rmv3J4EHcD8hYIiF5t3R.jpg"
+                    alt="Storyboard 2 thumbnail A">
+                    <img
+                    loading="lazy"
+                    src="https://plus.unsplash.com/premium_photo-1689530775582-83b8abdb5020?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fHww"
+                    alt="Storyboard 2 thumbnail B">
+                </div>
+
+                <!-- FOR MULTIPLE PICTURES -->
+                <div class="slideshow">
+                    <button class="close">&times;</button>
+                    <button class="prev">&#10094;</button>
+                    <img class="slide-img" loading="lazy" alt="Slide">
+                    <button class="next">&#10095;</button>
+                </div>
+                </div>
+
+            </div>
+            </div>
+        
+        <script>
+            /* SELECTS WITHIN EACH STORYBOARD */
+            document.querySelectorAll('.storyboard').forEach(story => {
+            const thumbs     = Array.from(story.querySelectorAll('.thumbs img'));
+            const slideshow  = story.querySelector('.slideshow');
+            const slideImg   = slideshow.querySelector('.slide-img');
+            const btnClose   = slideshow.querySelector('.close');
+            const btnNext    = slideshow.querySelector('.next');
+            const btnPrev    = slideshow.querySelector('.prev');
+            let currentIndex = 0;
+
+            function openSlide(idx) {
+                currentIndex = idx;
+                slideImg.style.opacity = 0;
+                setTimeout(() => {
+                slideImg.src = thumbs[currentIndex].src;
+                slideshow.classList.add('show');
+                slideImg.style.opacity = 1;
+                }, 200);
+            }
+            function closeSlide() { slideshow.classList.remove('show'); }
+            function showNext() {
+                if (!btnNext) return;
+                currentIndex = (currentIndex + 1) % thumbs.length;
+                openSlide(currentIndex);
+            }
+            function showPrev() {
+                if (!btnPrev) return;
+                currentIndex = (currentIndex - 1 + thumbs.length) % thumbs.length;
+                openSlide(currentIndex);
+            }
+
+            thumbs.forEach((img, idx) => img.addEventListener('click', () => openSlide(idx)));
+            btnClose.addEventListener('click', closeSlide);
+            if (btnNext) btnNext.addEventListener('click', showNext);
+            if (btnPrev) btnPrev.addEventListener('click', showPrev);
+
+            slideshow.addEventListener('keydown', e => {
+                if (!slideshow.classList.contains('show')) return;
+                if (e.key === 'ArrowRight') showNext();
+                if (e.key === 'ArrowLeft')  showPrev();
+                if (e.key === 'Escape')     closeSlide();
+            });
+            slideshow.setAttribute('tabindex', '0');
+            });
+        </script>
         <footer>
             <div class="socials">
                 <a href="https://x.com/ziyuanyuan1113"  >
-                    <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/x-social-media-black-icon.png" alt="Twitter" width="30px" height="30px">
+                    <img loading="lazy" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/x-social-media-black-icon.png" alt="Twitter" width="30px" height="30px">
                 </a>
 
                 <a href="https://www.instagram.com/ziyuanyuan1113/?hl=en"  >
-                    <img src="https://static.vecteezy.com/system/resources/thumbnails/018/930/460/small/instagram-logo-instagram-icon-transparent-free-png.png" alt="Instagram" width="60px" height="60px">
+                    <img loading="lazy" src="https://static.vecteezy.com/system/resources/thumbnails/018/930/460/small/instagram-logo-instagram-icon-transparent-free-png.png" alt="Instagram" width="60px" height="60px">
                 </a>
                 <a href="https://bsky.app/profile/ziyuanyuan1113.bsky.social"  >
-                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/bluesky.svg" alt="Blue sky" width="30" height="30">
+                    <img loading="lazy" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/bluesky.svg" alt="Blue sky" width="30" height="30">
                 </a>
                 <a href="https://www.youtube.com/@ziyuanyuan1113"  >
-                    <img src="https://www.iconpacks.net/icons/1/free-youtube-icon-123-thumb.png" alt="YouTube" width="40px" height="40px">
+                    <img loading="lazy" src="https://www.iconpacks.net/icons/1/free-youtube-icon-123-thumb.png" alt="YouTube" width="40px" height="40px">
                 </a>
             </div>
         </footer>

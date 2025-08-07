@@ -1,3 +1,6 @@
+/* ----------------------------------------------
+   for all (general)
+---------------------------------------------- */
 body {
   font-family: 'Nunito', sans-serif;
   background-color: #FAF6EA;
@@ -5,10 +8,6 @@ body {
   line-height: 1.5;
 }
 
-/* Active navbar link */
-#navbar a.active {
-  color: #5471BC;
-}
 
 /* Main wrapper (same as subVD) */
 .main {
@@ -39,7 +38,9 @@ body {
 .invis {
     opacity: 0;
 }
-
+/* ----------------------------------------------
+   image slideshow
+---------------------------------------------- */
 /* Slideshow overlay */
 .slideshow {
   position: fixed;
@@ -68,7 +69,9 @@ body {
   object-fit: contain;
   transition: opacity 0.2s ease-in;
 }
-
+/* ----------------------------------------------
+   slideshow buttons
+---------------------------------------------- */
 /* Slideshow controls */
 .close {
   position: absolute;
@@ -114,7 +117,9 @@ body {
 .next:hover {
   color: black;
 }
-
+/* ----------------------------------------------
+   Social
+---------------------------------------------- */
 /* Navbar & socials (unchanged) */
 .socials {
   display: flex;
@@ -143,6 +148,9 @@ body {
     saturate(6139%) hue-rotate(204deg) brightness(87%) contrast(88%);
 }
 
+/* ----------------------------------------------
+   Navbar
+---------------------------------------------- */
 /* Header & Navbar styling */
 #navbar {
     background-color: #FAF6EA;
@@ -236,7 +244,9 @@ body {
     font-weight: 500;
 }
 
-
+/* ----------------------------------------------
+   Mobile Navbar
+---------------------------------------------- */
 /* MOBILE DISPLAY */
 #navbarMob {
     margin-left: auto;
@@ -343,4 +353,9 @@ body {
 /* LINK STYLING FOR NAVBAR (TEMPORARY) */
 #navbar a:hover {
     color: #4874E3;
+}
+
+/* Active navbar link */
+#navbar a.active {
+  color: #5471BC;
 }

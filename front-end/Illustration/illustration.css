@@ -1,157 +1,170 @@
 /* ----------------------------------------------
-   for all (general)
+   Global Resets & Base Styles
 ---------------------------------------------- */
 body {
-  font-family: 'Nunito', sans-serif;
-  background-color: #FAF6EA;
-  color: #333;
-  line-height: 1.5;
+    font-family: 'Nunito', sans-serif;
+    background-color: #FAF6EA;
+    margin: 0;
+    padding: 0;
 }
-
-
-/* Main wrapper (same as subVD) */
 .main {
-  width: 85%;
-  margin: 150px auto 225px auto;
-  padding: 70px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    width: 85%;
+    margin: 150px auto 225px auto;
+    padding: 70px;
+    box-sizing: border-box;
+}
+#gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
 
-/* Gallery container now a column flex */
-.gallery-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+/* image styling + cursor */
+.image {
+    width: 100%;
+}
+.image:hover {
+    cursor: zoom-in;
+}
+/* ----------------------------------------------
+   Image gallery styling, different ways the images can be arranged (grid/column)
+---------------------------------------------- */
+.section.one {
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+.section.two {
+    display: flex;
 }
 
-/* Thumbnails fill width */
-.gallery-container > img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  cursor: zoom-in;
-  transition: transform 0.3s ease, filter 0.3s ease;
+/* ----------------------------------------------
+   Slideshow 
+---------------------------------------------- */
+.slideshow {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: flex;
+    /* changes opacity for fade in */
+    opacity: 0;
+
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(250, 246, 234, 0.8);
+    
+}
+.slideshow-img {
+    width: 85vw;
+    height: auto;
+    max-height: 100vh;
+    object-fit: contain;
+    transition: opacity 0.2s ease-in;
+
+}
+
+/* to show slideshow button */
+.show {
+    opacity: 1;
+    z-index: 4;
+
+    transition: opacity 0.2s ease-in;
 }
 .invis {
     opacity: 0;
-}
-/* ----------------------------------------------
-   image slideshow
----------------------------------------------- */
-/* Slideshow overlay */
-.slideshow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(250, 246, 234, 0.9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease-in;
-  z-index: 999;
+    transition: opacity 0.2s ease-in;
+    /* This applies to the image in the slideshow to similate the effect when CHANGING images*/
 }
 
-.slideshow.show {
-  opacity: 1;
-  pointer-events: all;
-}
-
-.slideshow-img {
-  max-width: 85vw;
-  max-height: 100vh;
-  object-fit: contain;
-  transition: opacity 0.2s ease-in;
-}
-/* ----------------------------------------------
-   slideshow buttons
----------------------------------------------- */
-/* Slideshow controls */
+/* slideshow buttons */
 .close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 5em;
-  background: transparent;
-  border: none;
-  color: darkgray;
-  width: 10%;
-  height: 10%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    color: darkgray;
+    z-index: 5;
+    width: 10%;
+    height: 10%;
 }
-
-.prev,
-.next {
-  position: absolute;
-  top: 10%;
-  width: 47%;
-  height: 80%;
-  background: transparent;
-  border: none;
-  font-size: 3vw;
-  color: darkgray;
-  cursor: pointer;
-}
-
 .prev {
-  left: 2vw;
-  text-align: left;
+    position: absolute;
+    top: 10%;
+    left: 2vw;
+    font-size: 3vw;
+    border: none;
+    background-color: transparent;
+    color: darkgray;
+    width: 47%;
+    height: 80%;
+    text-align: left;
+    
 }
-
 .next {
-  right: 2vw;
-  text-align: right;
+    position: absolute;
+    top: 10%;
+    right: 2vw;
+    font-size: 3vw;
+    border: none;
+    background-color: transparent;
+    color: darkgray;
+    width: 47%;
+    height: 80%;
+    text-align: right;
+    
+}
+/* slideshow hover effects */
+.next:hover, .prev:hover, .close:hover {
+    color: black;
 }
 
-.close:hover,
-.prev:hover,
-.next:hover {
-  color: black;
+#navbar a.active {
+    color: #5471BC;
+
 }
+
+
 /* ----------------------------------------------
-   Social
+   Social 
 ---------------------------------------------- */
-/* Navbar & socials (unchanged) */
 .socials {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;   
 }
-
 .socials a {
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.socials > a > img {
-  opacity: 0.5;
-  transition: opacity 0.2s ease;
+    width: 30px;
+    height: 30px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
 }
 
 .socials img:hover {
-  opacity: 1;
-  filter: brightness(0) saturate(100%) invert(72%) sepia(66%)
-    saturate(6139%) hue-rotate(204deg) brightness(87%) contrast(88%);
-}
+    filter: brightness(0) saturate(100%) invert(72%) sepia(66%) saturate(6139%) hue-rotate(204deg) brightness(87%) contrast(88%);
+    opacity: 1;
 
-/* ----------------------------------------------
-   Navbar
----------------------------------------------- */
-/* Header & Navbar styling */
+}
+.socials>a>img {
+    opacity: 0.5;
+}
+/* ---------------------------------------------- for header */
+
+
+
+
 #navbar {
     background-color: #FAF6EA;
     display: flex;
@@ -244,9 +257,7 @@ body {
     font-weight: 500;
 }
 
-/* ----------------------------------------------
-   Mobile Navbar
----------------------------------------------- */
+
 /* MOBILE DISPLAY */
 #navbarMob {
     margin-left: auto;
@@ -264,7 +275,7 @@ body {
     border: none;
     font-weight: 400;
     background-color: #FAF6EA;
-   
+
 }
 /* hidden list until button clicked */
 #listDown {
@@ -353,9 +364,4 @@ body {
 /* LINK STYLING FOR NAVBAR (TEMPORARY) */
 #navbar a:hover {
     color: #4874E3;
-}
-
-/* Active navbar link */
-#navbar a.active {
-  color: #5471BC;
 }

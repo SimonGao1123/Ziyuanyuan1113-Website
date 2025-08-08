@@ -7,6 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--This improves SEO and makes the website the same scale no matter the device-->
         <meta name="description" content="Ziyuanyuan Art Portfolio" /> <!--Improves accessibility, description of contents of website-->
         <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+        <script src="../slideShow.js" defer></script> <!-- uses exctly same navbar script as index.js so just reuse-->
+        <script src="../navBar.js" defer></script> <!-- uses exctly same navbar script as index.js so just reuse-->
 
     </head>
     <body>
@@ -49,64 +51,30 @@
         </header>
 
 
-        <!-- SCRIPT FOR NAVBAR OPENING AND CLOSING NAVBAR DEPENDING ON SCROLL -->
-        <script>
-            const navbar = document.getElementById('navbar');
-            let lastScrollY = window.scrollY;
+        
 
 
-            window.addEventListener('scroll', () => {
-                const currentScrollY = window.scrollY;
-
-
-                if (currentScrollY > lastScrollY) {
-                // Scrolling down
-                navbar.style.opacity = '0';
-                } else {
-                // Scrolling up
-                navbar.style.opacity = '1';
-                }
-
-
-                lastScrollY = currentScrollY;
-            });
-        </script>
-
-
-        <!-- SCRIPT FOR HAMBURGER MENU FOR MOBILE DISPLAY -->
-        <script>
-            const menuButton = document.getElementById('menuButton');
-            const listDown = document.getElementById('listDown');
-
-
-            // Toggle on button click
-            menuButton.addEventListener('click', (event) => {
-                listDown.classList.toggle('active');
-                event.stopPropagation(); // Prevent the event from bubbling up to the document
-            });
-
-
-            // Clicking anywhere else closes the dropdown
-            document.addEventListener('click', (event) => {
-                const isClickInsideMenu = listDown.contains(event.target);
-                const isClickOnButton = menuButton.contains(event.target);
-
-
-                if (!isClickInsideMenu && !isClickOnButton) { // if menu is open and click not inside menu then retract
-                    listDown.classList.remove('active'); // remove active state (make max height 0 again)
-                }
-            });
-        </script>
+        
 
         <!-- MAIN CONTENT -->
         <div class="main">
-            <div class="illustration-content">
-                <div class="gallery-container one">
-                    <img loading="lazy" src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2l0eXxlbnwwfHwwfHx8MA%3D%3D" alt="Illustration 1" />
-                    <img loading="lazy" src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZvcmVzdHxlbnwwfHwwfHx8MA%3D%3D" alt="Illustration 2" />
-                    <img loading="lazy" src="https://images.unsplash.com/photo-1589302714055-5f173511f297?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGxhaW5zfGVufDB8fDB8fHww" alt="Illustration 3" />
-                    <img loading="lazy" src="https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZWFydGh8ZW58MHx8MHx8fDA%3D" alt="Illustration 3" />
+            <div id="gallery">
+                <!-- THE 'FIRST' AND 'ONE' CLASS IS TO PREPARE FOR FUTURE SECTIONS WITH DIFFERENT FORMATS -->
+                <div class="section one">
+                    <img loading="lazy" class="image" src="https://www.ziyuangao.com/uploads/1/4/2/5/142553854/1-little-women-title-page1_orig.png"/>
+                    <img loading="lazy" class="image" src="https://www.ziyuangao.com/uploads/1/4/2/5/142553854/published/3-1attic-main-scene-finished-1.png?1743081912"/>
+                    <img loading="lazy" class="image" src="https://www.ziyuangao.com/uploads/1/4/2/5/142553854/published/4-attic-shoebox-1.png?1743081915"/>
                 </div>
+                
+                <div class="section two">
+                    <img loading="lazy" class="image" src="https://www.ziyuangao.com/uploads/1/4/2/5/142553854/1-little-women-title-page1_orig.png"/>
+                    <img loading="lazy" class="image" src="https://www.ziyuangao.com/uploads/1/4/2/5/142553854/published/3-1attic-main-scene-finished-1.png?1743081912"/>
+                    <img loading="lazy" class="image" src="https://www.ziyuangao.com/uploads/1/4/2/5/142553854/published/4-attic-shoebox-1.png?1743081915"/>
+                </div>
+
+
+
+
                 <!--HIDDEN CONTAINER FOR SLIDESHOW-->
                 <div class="slideshow">
                     <button class="close">&times;</button>
@@ -116,81 +84,6 @@
                 </div>
             </div>
         </div>
-
-
-        <!-- SLIDESHOW SCRIPT -->
-        <script>
-            const closeBt = document.querySelector('.close');
-            const nextBt = document.querySelector('.next');
-            const prevBt = document.querySelector('.prev');
-
-            // the variable that will be given and removed from the class .show to show visibility
-            const slideshow = document.querySelector('.slideshow');
-
-            // selections all elements with class 'section'
-            const images = document.querySelectorAll('.gallery-container img');
-            const slideshowImg = document.querySelector('.slideshow-img');
-
-            let imageArr = Array.from(images).map(img => img.src);
-
-            // will iterate through the image array full of all the images from the section
-            var currInd = 0;
-
-            function showImg (index) {
-
-                slideshowImg.classList.add('invis'); // this will cause the fading effect when switching images 
-                // first remove and then readd the slideshow with a gap in timein the middle
-                
-                setTimeout (function () {
-                    // parameter of an image and displays the image from the array at that index
-                    currInd = index; // update current index for future movement
-                    slideshowImg.src = imageArr[index];
-                    slideshow.classList.add('show');
-                    slideshowImg.classList.remove('invis'); // this will cause the fading effect when switching images 
-
-                }, 200);
-            }
-
-            // each image becomes a button and when they are clicked 
-            // they will display the slideshow image from that index they are attached to
-            images.forEach(function(img, index) {
-                img.addEventListener('click', function() {
-                    showImg(index);
-                });
-            });
-
-            closeBt.addEventListener('click', function () {
-                slideshow.classList.remove('show');
-            });
-            nextBt.addEventListener('click', function () {
-                // modulus prevents overflow and just loops around when above array length acheived
-                currInd = (currInd + 1) % imageArr.length;
-                showImg(currInd);
-            });
-            prevBt.addEventListener('click', function () {
-                currInd = (imageArr.length + (currInd - 1)) % imageArr.length;
-                showImg(currInd);
-            });
-
-            // 'keydown' refers to whenever the use presses a key
-            // hotkeys instead of using buttons (left and right arrow keys and escape)
-            // e is the key they pressed
-            document.addEventListener('keydown', function(e) {
-                // if slideshow is not shown then don't proceed with hotkeys
-                if (!slideshow.classList.contains('show')) {
-                    return;
-                }
-                if (e.key == 'ArrowLeft') {
-                    prevBt.click();
-                }
-                if (e.key == 'ArrowRight') {
-                    nextBt.click();
-                }
-                if (e.key == 'Escape') {
-                    closeBt.click();
-                }
-            }); 
-        </script>
 
         <footer>
             <div class="socials">

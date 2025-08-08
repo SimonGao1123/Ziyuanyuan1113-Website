@@ -1,12 +1,11 @@
-const express = require('express');
+const express = require("express");
+const path = require("path");
 const app = express();
+const PORT = 3000;
 
-app.get('/', (req, res) => {
-  res.send('Hello from JavaScript backend!');
+// Serve static files using an absolute path
+app.use(express.static(path.join(__dirname, "../front-end")));
+
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
 });
-
-app.listen(3000, () => {
-  console.log('Server running at http://localhost:3000/');
-}); 
-// simple placeholder for the backend code
-// RUN WITH: node index.js

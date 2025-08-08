@@ -1,36 +1,9 @@
-
+/* ----------------------------------------------
+   General body
+---------------------------------------------- */
 body {
     font-family: 'Nunito', sans-serif;
     background-color: #FAF6EA;
-}
-
-#navbar a.active {
-    color: #5471BC;
-
-}
-
-.socials {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    margin-bottom: 50px;   
-}
-.socials a {
-    width: 30px;
-    height: 30px;
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-}
-
-.socials img:hover {
-    filter: brightness(0) saturate(100%) invert(72%) sepia(66%) saturate(6139%) hue-rotate(204deg) brightness(87%) contrast(88%);
-    opacity: 1;
-}
-
-.socials>a>img {
-    opacity: 0.5;
 }
 
 .main {
@@ -41,7 +14,9 @@ body {
     margin: 0 auto 225px auto;
     padding: 70px;
 }
-
+/* ----------------------------------------------
+   Image containers
+---------------------------------------------- */
 .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -110,6 +85,33 @@ body {
     text-decoration: none;
     font-weight: bold;
 }
+/* ----------------------------------------------
+   Social
+---------------------------------------------- */
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;   
+}
+.socials a {
+    width: 30px;
+    height: 30px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.socials img:hover {
+    filter: brightness(0) saturate(100%) invert(72%) sepia(66%) saturate(6139%) hue-rotate(204deg) brightness(87%) contrast(88%);
+    opacity: 1;
+}
+
+.socials>a>img {
+    opacity: 0.5;
+}
+
 
 /* ---------------------------------------------- for header */
 
@@ -315,4 +317,8 @@ body {
 /* LINK STYLING FOR NAVBAR (TEMPORARY) */
 #navbar a:hover {
     color: #4874E3;
+}
+#navbar a.active {
+    color: #5471BC;
+
 }

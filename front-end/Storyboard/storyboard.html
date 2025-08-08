@@ -7,6 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--This improves SEO and makes the website the same scale no matter the device-->
         <meta name="description" content="Ziyuanyuan Art Portfolio" /> <!--Improves accessibility, description of contents of website-->
         <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+        <script src="../navBar.js" defer></script>
+        <script src="storySlide.js" defer></script>
 
     </head>
     <body>
@@ -48,55 +50,6 @@
             </nav>
         </header>
 
-
-        <!-- SCRIPT FOR NAVBAR OPENING AND CLOSING NAVBAR DEPENDING ON SCROLL -->
-        <script>
-            const navbar = document.getElementById('navbar');
-            let lastScrollY = window.scrollY;
-
-
-            window.addEventListener('scroll', () => {
-                const currentScrollY = window.scrollY;
-
-
-                if (currentScrollY > lastScrollY) {
-                // Scrolling down
-                navbar.style.opacity = '0';
-                } else {
-                // Scrolling up
-                navbar.style.opacity = '1';
-                }
-
-
-                lastScrollY = currentScrollY;
-            });
-        </script>
-
-
-        <!-- SCRIPT FOR HAMBURGER MENU FOR MOBILE DISPLAY -->
-        <script>
-            const menuButton = document.getElementById('menuButton');
-            const listDown = document.getElementById('listDown');
-
-
-            // Toggle on button click
-            menuButton.addEventListener('click', (event) => {
-                listDown.classList.toggle('active');
-                event.stopPropagation(); // Prevent the event from bubbling up to the document
-            });
-
-
-            // Clicking anywhere else closes the dropdown
-            document.addEventListener('click', (event) => {
-                const isClickInsideMenu = listDown.contains(event.target);
-                const isClickOnButton = menuButton.contains(event.target);
-
-
-                if (!isClickInsideMenu && !isClickOnButton) { // if menu is open and click not inside menu then retract
-                    listDown.classList.remove('active'); // remove active state (make max height 0 again)
-                }
-            });
-        </script>
         <div class="main">
             <div class="gallery">
 
@@ -184,52 +137,6 @@
             </div>
             </div>
         
-        <script>
-            /* SELECTS WITHIN EACH STORYBOARD */
-            document.querySelectorAll('.storyboard').forEach(story => {
-            const thumbs     = Array.from(story.querySelectorAll('.thumbs img'));
-            const slideshow  = story.querySelector('.slideshow');
-            const slideImg   = slideshow.querySelector('.slide-img');
-            const btnClose   = slideshow.querySelector('.close');
-            const btnNext    = slideshow.querySelector('.next');
-            const btnPrev    = slideshow.querySelector('.prev');
-            let currentIndex = 0;
-
-            function openSlide(idx) {
-                currentIndex = idx;
-                slideImg.style.opacity = 0;
-                setTimeout(() => {
-                slideImg.src = thumbs[currentIndex].src;
-                slideshow.classList.add('show');
-                slideImg.style.opacity = 1;
-                }, 200);
-            }
-            function closeSlide() { slideshow.classList.remove('show'); }
-            function showNext() {
-                if (!btnNext) return;
-                currentIndex = (currentIndex + 1) % thumbs.length;
-                openSlide(currentIndex);
-            }
-            function showPrev() {
-                if (!btnPrev) return;
-                currentIndex = (currentIndex - 1 + thumbs.length) % thumbs.length;
-                openSlide(currentIndex);
-            }
-
-            thumbs.forEach((img, idx) => img.addEventListener('click', () => openSlide(idx)));
-            btnClose.addEventListener('click', closeSlide);
-            if (btnNext) btnNext.addEventListener('click', showNext);
-            if (btnPrev) btnPrev.addEventListener('click', showPrev);
-
-            slideshow.addEventListener('keydown', e => {
-                if (!slideshow.classList.contains('show')) return;
-                if (e.key === 'ArrowRight') showNext();
-                if (e.key === 'ArrowLeft')  showPrev();
-                if (e.key === 'Escape')     closeSlide();
-            });
-            slideshow.setAttribute('tabindex', '0');
-            });
-        </script>
         <footer>
             <div class="socials">
                 <a href="https://x.com/ziyuanyuan1113"  >

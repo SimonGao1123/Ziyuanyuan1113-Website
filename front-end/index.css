@@ -1,9 +1,18 @@
+/* ----------------------------------------------
+   Global Resets & Base Styles
+---------------------------------------------- */
 body {
     font-family: 'Nunito', sans-serif;
     background-color: #FAF6EA;
 }
-
-
+.main {
+    width: 85%;
+    margin: 150px auto 225px auto;
+    padding: 70px;
+}
+/* ----------------------------------------------
+   Titles of each gallery section
+---------------------------------------------- */
 .main h1 {
     margin-top: 0;
     display: flex;
@@ -14,56 +23,22 @@ body {
     font-size: 1.4rem;
 }
 
-
+/* ----------------------------------------------
+   Spacing between gallery sections
+---------------------------------------------- */
 .padding{
     margin-bottom: 6rem;
 }
 
+/* ----------------------------------------------
+   Only for Visual Development section for subpage links
+---------------------------------------------- */
 .image-section a{
     display: inline-block;
     width: 100%;
     margin: 0;
     height: auto;
 }
-
-.image-section{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5px;
-    justify-items: center;
-}
-
-.sample img {
-    width: 100%;
-    height: 100%;     
-    object-fit: cover;
-    object-position: top;
-}
-
-.main {
-    width: 85%;
-    margin: 150px auto 225px auto;
-    padding: 70px;
-}
-
-
-.expand a{
-    text-decoration: none;
-    color: black;
-    font-weight: 500;
-}
-
-.expand a:hover{
-    color:#5471BC;
-    
-}
-
-a:hover .hover-text {
-    opacity: 1;
-    color: #5471BC;
-    transition: opacity 0.2s ease;
-}
-
 .hover-text{
     width: 100%;
     height: 100%;
@@ -81,6 +56,7 @@ a:hover .hover-text {
     transition: opacity 0.2s ease;
 }
 
+/* contains the text when hovering over */
 .image-text-container {
     display: inline-block;
     position: relative;
@@ -88,6 +64,49 @@ a:hover .hover-text {
     height: auto;   
 }
 
+/* ----------------------------------------------
+   Container for 4 images in grid
+---------------------------------------------- */
+.image-section{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    justify-items: center;
+}
+
+.sample img {
+    width: 100%;
+    height: 100%;     
+    object-fit: cover;
+    object-position: top;
+}
+
+/* ----------------------------------------------
+   "see all" text container
+---------------------------------------------- */
+.expand a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+.expand a:hover{
+    color:#5471BC;
+    
+}
+
+/* ----------------------------------------------
+   navbar links
+---------------------------------------------- */
+a:hover .hover-text {
+    opacity: 1;
+    color: #5471BC;
+    transition: opacity 0.2s ease;
+}
+
+/* ----------------------------------------------
+   All images in section
+---------------------------------------------- */
 .sample img {
     width: 100%;
     height: auto;     
@@ -96,10 +115,6 @@ a:hover .hover-text {
     z-index: 1;
     max-height: 500px;
 
-}
-
-#navbar a.active {
-    color: #5377d3;
 }
 
 .socials {
@@ -126,11 +141,16 @@ a:hover .hover-text {
     opacity: 0.5;
 }
 
+
+
+
 /* ---------------------------------------------- for header */
 
 
 
-
+#navbar a.active {
+    color: #5377d3;
+}
 #navbar {
     background-color: #FAF6EA;
     display: flex;

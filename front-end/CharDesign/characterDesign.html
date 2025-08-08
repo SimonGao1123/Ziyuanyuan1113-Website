@@ -7,7 +7,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--This improves SEO and makes the website the same scale no matter the device-->
         <meta name="description" content="Ziyuanyuan Art Portfolio" /> <!--Improves accessibility, description of contents of website-->
         <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-    
+        <script src="charDesSlide.js" defer></script>
+        <script src="../navBar.js" defer></script>
+
     </head>
     <body>
         <!-- NAVBAR -->
@@ -48,55 +50,6 @@
             </nav>
         </header>
 
-
-        <!-- SCRIPT FOR NAVBAR OPENING AND CLOSING NAVBAR DEPENDING ON SCROLL -->
-        <script>
-            const navbar = document.getElementById('navbar');
-            let lastScrollY = window.scrollY;
-
-
-            window.addEventListener('scroll', () => {
-                const currentScrollY = window.scrollY;
-
-
-                if (currentScrollY > lastScrollY) {
-                // Scrolling down
-                navbar.style.opacity = '0';
-                } else {
-                // Scrolling up
-                navbar.style.opacity = '1';
-                }
-
-
-                lastScrollY = currentScrollY;
-            });
-        </script>
-
-
-        <!-- SCRIPT FOR HAMBURGER MENU FOR MOBILE DISPLAY -->
-        <script>
-            const menuButton = document.getElementById('menuButton');
-            const listDown = document.getElementById('listDown');
-
-
-            // Toggle on button click
-            menuButton.addEventListener('click', (event) => {
-                listDown.classList.toggle('active');
-                event.stopPropagation(); // Prevent the event from bubbling up to the document
-            });
-
-
-            // Clicking anywhere else closes the dropdown
-            document.addEventListener('click', (event) => {
-                const isClickInsideMenu = listDown.contains(event.target);
-                const isClickOnButton = menuButton.contains(event.target);
-
-
-                if (!isClickInsideMenu && !isClickOnButton) { // if menu is open and click not inside menu then retract
-                    listDown.classList.remove('active'); // remove active state (make max height 0 again)
-                }
-            });
-        </script>
         <div class = "main">
             <div id="gallery">
                 <div class="section one">
@@ -118,51 +71,6 @@
 
             </div>
         </div>
-
-        <!-- IMAGE ARRAY TO SELECT THROUGH IMAGES IN MINI SLIDESHOW -->
-        <script>
-            const selectorImg = document.querySelector('.default-selector');
-            const prevB = document.querySelector('.prev');
-            const nextB = document.querySelector('.next');
-            const imgSelector = document.querySelectorAll('.img-selector img');
-
-            const imgArr = Array.from(imgSelector).map(img => img.src);
-
-            let currInd = 0;
-
-            imgSelector.forEach((img, index) => {
-                img.addEventListener('click', () => {
-                    selectorImg.classList.add('invis');
-                    setTimeout (()=> {
-                        selectorImg.src = imgArr[index];
-                        currInd = index;
-                        selectorImg.classList.remove('invis');
-                    }, 200);
-                })
-            });
-
-            prevB.addEventListener('click', ()=> {
-                selectorImg.classList.add('invis');
-                currInd = (imgArr.length + (currInd - 1)) % imgArr.length;
-                
-                
-                setTimeout (()=> {
-                        
-                        selectorImg.src = imgArr[currInd];
-                        selectorImg.classList.remove('invis');
-                    }, 200);
-            });
-
-            nextB.addEventListener('click', ()=> {
-                selectorImg.classList.add('invis');
-                setTimeout (()=> {
-                        currInd =  (currInd + 1) % imgArr.length;
-                        selectorImg.src = imgArr[currInd];
-                        selectorImg.classList.remove('invis');
-                    }, 200);
-            });
-            
-        </script>
 
         <footer>
             <div class="socials">

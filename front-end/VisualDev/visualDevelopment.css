@@ -1,4 +1,6 @@
-
+/* ----------------------------------------------
+   Global Resets & Base Styles
+---------------------------------------------- */
 body {
     font-family: 'Nunito', sans-serif;
     background-color: #FAF6EA;
@@ -16,6 +18,9 @@ body {
     gap: 15px;
 }
 
+/* ----------------------------------------------
+   Hover over titles styling
+---------------------------------------------- */
 .overlay-text:hover {
     opacity: 1;
     transition: opacity 0.2s ease-in;
@@ -38,6 +43,7 @@ body {
     transition: opacity 0.2s ease-in;
 }
 
+/* combines text + image for hover overlay */
 .image-wrap {
     position: relative;
     width: 100%;
@@ -51,11 +57,15 @@ body {
     object-fit: cover;
 }
 
+/* navbar link highlight color */
 #navbar a.active {
     color: #5471BC;
 
 }
 
+/* ----------------------------------------------
+   socials
+---------------------------------------------- */
 .socials {
     display: flex;
     justify-content: center;

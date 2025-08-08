@@ -1,282 +1,367 @@
-/* Global & Reset */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* ----------------------------------------------
+   Global Resets & Base Styles
+---------------------------------------------- */
 body {
-  font-family: 'Nunito', sans-serif;
-  background-color: #FAF6EA;
-  color: #333;
-  line-height: 1.5;
+    font-family: 'Nunito', sans-serif;
+    background-color: #FAF6EA;
+    margin: 0;
+    padding: 0;
 }
-
-/* Active navbar link */
-#navbar a.active {
-  color: #5471BC;
-}
-
-/* Main wrapper (same as subVD) */
 .main {
-  width: 85%;
-  margin: 150px auto 225px auto;
-  padding: 70px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    width: 85%;
+    margin: 150px auto 225px auto;
+    padding: 70px;
+    box-sizing: border-box;
+}
+#gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
 
-/* Gallery container now a column flex */
-.gallery-container {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+/* image styling + cursor */
+.image {
+    width: 100%;
+}
+.image:hover {
+    cursor: zoom-in;
+}
+/* ----------------------------------------------
+   Image gallery styling, different ways the images can be arranged (grid/column)
+---------------------------------------------- */
+.section.one {
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+.section.two {
+    display: flex;
 }
 
-/* Thumbnails fill width */
-.gallery-container > img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  cursor: zoom-in;
-  transition: transform 0.3s ease, filter 0.3s ease;
+/* ----------------------------------------------
+   Slideshow 
+---------------------------------------------- */
+.slideshow {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    display: flex;
+    /* changes opacity for fade in */
+    opacity: 0;
+
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(250, 246, 234, 0.8);
+    
+}
+.slideshow-img {
+    width: 85vw;
+    height: auto;
+    max-height: 100vh;
+    object-fit: contain;
+    transition: opacity 0.2s ease-in;
+
+}
+
+/* to show slideshow button */
+.show {
+    opacity: 1;
+    z-index: 4;
+
+    transition: opacity 0.2s ease-in;
 }
 .invis {
     opacity: 0;
+    transition: opacity 0.2s ease-in;
+    /* This applies to the image in the slideshow to similate the effect when CHANGING images*/
 }
 
-/* Slideshow overlay */
-.slideshow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(250, 246, 234, 0.9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease-in;
-  z-index: 999;
-}
-
-.slideshow.show {
-  opacity: 1;
-  pointer-events: all;
-}
-
-.slideshow-img {
-  max-width: 85vw;
-  max-height: 100vh;
-  object-fit: contain;
-  transition: opacity 0.2s ease-in;
-}
-
-/* Slideshow controls */
+/* slideshow buttons */
 .close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 5em;
-  background: transparent;
-  border: none;
-  color: darkgray;
-  width: 10%;
-  height: 10%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    color: darkgray;
+    z-index: 5;
+    width: 10%;
+    height: 10%;
 }
-
-.prev,
-.next {
-  position: absolute;
-  top: 10%;
-  width: 47%;
-  height: 80%;
-  background: transparent;
-  border: none;
-  font-size: 3vw;
-  color: darkgray;
-  cursor: pointer;
-}
-
 .prev {
-  left: 2vw;
-  text-align: left;
+    position: absolute;
+    top: 10%;
+    left: 2vw;
+    font-size: 3vw;
+    border: none;
+    background-color: transparent;
+    color: darkgray;
+    width: 47%;
+    height: 80%;
+    text-align: left;
+    
 }
-
 .next {
-  right: 2vw;
-  text-align: right;
+    position: absolute;
+    top: 10%;
+    right: 2vw;
+    font-size: 3vw;
+    border: none;
+    background-color: transparent;
+    color: darkgray;
+    width: 47%;
+    height: 80%;
+    text-align: right;
+    
+}
+/* slideshow hover effects */
+.next:hover, .prev:hover, .close:hover {
+    color: black;
 }
 
-.close:hover,
-.prev:hover,
-.next:hover {
-  color: black;
+#navbar a.active {
+    color: #5471BC;
+
 }
 
-/* Navbar & socials (unchanged) */
+
+/* ----------------------------------------------
+   Social 
+---------------------------------------------- */
 .socials {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;   
 }
-
 .socials a {
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.socials > a > img {
-  opacity: 0.5;
-  transition: opacity 0.2s ease;
+    width: 30px;
+    height: 30px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
 }
 
 .socials img:hover {
-  opacity: 1;
-  filter: brightness(0) saturate(100%) invert(72%) sepia(66%)
-    saturate(6139%) hue-rotate(204deg) brightness(87%) contrast(88%);
-}
+    filter: brightness(0) saturate(100%) invert(72%) sepia(66%) saturate(6139%) hue-rotate(204deg) brightness(87%) contrast(88%);
+    opacity: 1;
 
-/* Header & Navbar styling */
+}
+.socials>a>img {
+    opacity: 0.5;
+}
+/* ---------------------------------------------- for header */
+
+
+
+
 #navbar {
-  background-color: #FAF6EA;
-  position: fixed;
-  top: -17px;
-  left: 0;
-  width: 100vw;
-  height: 100px;
-  padding-top: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 1;
-  transition: opacity 0.15s linear;
-  z-index: 3;
+    background-color: #FAF6EA;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100vw;
+    top: -17px;
+    left: 0;
+    padding-top: 25px;
+        
+    margin-right: 0;
+
+    height: 100px;
+    justify-content: center;
+
+    /* animation when appearing and disappearing (affected by scrolling) */
+    opacity: 1;
+    transition: opacity 0.15s linear;
+    
+    /* ADJUST BASED ON Z-INDEX OF THE REST OF WEBPAGE (ALWAYS MAKE IT 1 HIGHER) */
+    z-index: 3;
 }
 
+
+
+
+/* Centers PC display using padding */
 .nav-content {
-  width: 85%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    margin: 0 auto;
+    padding-left: 8px;    
+    box-sizing: border-box;
+    height: 100px;
+
+
 }
+
+
+
 
 #navHead {
-  font-size: clamp(32px, 2vw, 64px);
-  color: #5471BC;
-  font-weight: normal;
+    margin: 0;
+    font-size: clamp(32px, 2vw, 64px); 
+    color: #5471BC;
+    font-weight: normal;
+    
 }
 
-#navList {
-  display: flex;
-  list-style: none;
-  margin-left: auto;
-  padding: 0;
-  width: 75%;
-  margin-right: 27px;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  position: relative;
-  right: -4.8vw;
+
+
+
+/* PC DISPLAY */
+#navList {    
+    display: flex;
+
+
+    list-style: none;
+    margin-left: auto;
+    padding: 0;
+
+
+
+
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 75%;
+    margin-right: 27px;
+    position: relative;
+    right: -4.8vw;
 }
+
+
+
 
 #navList li {
-  width: 16.666%;
-  height: 100%;
-  display: flex;
+    width: 16.666%;
+    height: 100%;
+    display: flex;
+    box-sizing: border-box;
 }
-
+/* ADDRESSES ONLY IN PC DISPLAY */
 #navList a {
-  font-size: clamp(14px, 0.8vw, 16px);
-  font-weight: 500;
-  text-decoration: none;
-  color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  height: 100%;
-  padding: 0 5px;
+    font-size: clamp(14px, 0.8vw, 16px);
+    white-space: normal;   /* allows text to wrap */
+    word-break: break-word; /* breaks long words */
+    font-weight: 500;
 }
 
-#navList a:hover {
-  color: #4874E3;
-}
 
-/* Mobile Navbar */
+/* MOBILE DISPLAY */
 #navbarMob {
-  display: none;
-  position: relative;
-  width: 100px;
-  height: 100%;
-  margin-left: auto;
-  top: -7px;
+    margin-left: auto;
+    position: relative;
+    width: 100px;
+    height: 100%;
+    display: none; /* keeps mobile hidden until @media requirements met */
+    top: -7px;
 }
-
+/* button */
 #menuButton {
-  width: 100%;
-  height: 100%;
-  font-size: 3em;
-  background: #FAF6EA;
-  border: none;
-  font-weight: 400;
-}
+    width: 100%;
+    height: 100%;
+    font-size: 3em;
+    border: none;
+    font-weight: 400;
+    background-color: #FAF6EA;
 
+}
+/* hidden list until button clicked */
 #listDown {
-  list-style: none;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-  max-height: 0;
-  width: 300px;
-  transition: max-height 0.3s ease;
-  right: 199px;
-  top: -9px;
-  background: #FAF6EA;
-  box-sizing: border-box;
-  z-index: 1;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    
+    /* beginning of animation (hidden and expands downwards) */
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+
+    width: 300px;
+    
+    box-sizing: border-box;
+
+    right: 199px;
+    top: -9px;
+    padding: 0;
+
+    z-index: 1;
+    background-color: #FAF6EA;
+
+
+
+
+}
+/* slide down animation */
+#listDown.active {
+    max-height: 40vh;
 }
 
-#listDown.active {
-  max-height: 40vh;
-}
+
+
 
 #listDown li {
-  width: 100%;
-  height: calc(40vh / 6);
-  border: 1px solid black;
-  box-sizing: border-box;
+    border: 1px solid black;
+    width: 100%;
+    height: calc(40vh/6);
+    box-sizing: border-box;
 }
 
+
+
+
+/* DETERMINES WHETHER MOBILE OR PC DISPLAY (if screen is less than 1100px then transitions to mobile) */
 @media (max-width: 1200px) {
-  #navList {
-    display: none;
-  }
-  #navHead {
-    font-size: 5vw;
-  }
-  #navbarMob {
-    display: block;
-  }
+    #navList {
+        display: none;
+    }
+    #navHead {
+        font-size: 5vw;
+    }
+    #navbarMob {
+        display: block;
+    }
+}
+
+
+
+
+/* SELECTS ALL LINKS IN NAVBAR */
+#navbar a {
+    text-decoration: none;
+    color: black;
+
+
+
+
+    padding: 0 5px;
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+
+/* LINK STYLING FOR NAVBAR (TEMPORARY) */
+#navbar a:hover {
+    color: #4874E3;
 }

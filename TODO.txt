@@ -1,0 +1,5 @@
+[DONE] 1. Create a css file to define variables assigned to every html page and ensure each files' base padding/background colors are the same
+    - also variables make it easier to switch multiple pages worth of styling at once
+2. Node.js to manange passwords 
+3. Add pictures (in images folder under the front-end folder)
+4. Upload to a website hosting service

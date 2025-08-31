@@ -22,18 +22,24 @@
                 <div class="nav-content">
                     <h1 id="navHead">JUDY ZIYUAN GAO</h1>
 
-
-
-
                     <!-- Navbar for PC -->
                     <ul id="navList">
-                        <li><a   href="../index.html">GALLERY</a></li>
-                        <li><a   href="../VisualDev/visualDevelopment.html">VISUAL<br/>DEVELOPMENT</a></li>
-                        <li><a   href="../CharDesign/characterDesign.html">CHARACTER<br/>DESIGN</a></li>
-                        <li><a   href="../Storyboard/storyboard.html">STORYBOARD</a></li>
-                        <li><a   class="active" href="illustration.html">ILLUSTRATION</a></li>
-                        <li><a   href="../About/about.html">ABOUT</a></li>
+                        <li><a href="../index.html">GALLERY</a></li>
+                        <li id="visDevNav"><a href="../VisualDev/visualDevelopment.html">VISUAL<br/>DEVELOPMENT</a>
+                            <ul id="visualDev-dropdown">
+                                <li><a href="../VisualDev/subVD/sub1VD.html">SUBPAGE 1</a></li>
+                                <li><a href="">SUBPAGE 2 (nothing)</a></li>
+                                <li><a href="">SUBPAGE 3 (nothing)</a></li>
+                                <li><a href="">SUBPAGE 4 (nothing)</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../characterDesign.html">CHARACTER<br/>DESIGN</a></li>
+                        <li><a href="../Storyboard/storyboard.html">STORYBOARD</a></li>
+                        <li><a class="active" href="illustration.html">ILLUSTRATION</a></li>
+                        <li><a href="../About/about.html">ABOUT</a></li>
                     </ul>
+
+                    
 
 
                     
@@ -42,12 +48,12 @@
                 <div id="navbarMob">
                     <button id="menuButton">☰</button>
                     <ul id="listDown">
-                        <li><a   href="../index.html">GALLERY</a></li>
-                        <li><a   href="../VisualDev/visualDevelopment.html">VISUAL<br/>DEVELOPMENT</a></li>
-                        <li><a   href="../CharDesign/characterDesign.html">CHARACTER<br/>DESIGN</a></li>
-                        <li><a   href="../Storyboard/storyboard.html">STORYBOARD</a></li>
-                        <li><a   class="active" href="illustration.html">ILLUSTRATION</a></li>
-                        <li><a   href="../About/about.html">ABOUT</a></li>
+                        <li><a   href="index.html" class="active">GALLERY</a></li>
+                        <li><a   href="VisualDev/visualDevelopment.html">VISUAL DEVELOPMENT</a></li>
+                        <li><a   href="CharDesign/characterDesign.html">CHARACTER DESIGN</a></li>
+                        <li><a   href="Storyboard/storyboard.html">STORYBOARD</a></li>
+                        <li><a   href="Illustration/illustration.html">ILLUSTRATION</a></li>
+                        <li><a   href="About/about.html">ABOUT</a></li>
                     </ul>   
                 </div>
             </nav>
@@ -69,20 +75,11 @@
                     <img loading="lazy" class="image" src="https://www.ziyuangao.com/uploads/1/4/2/5/142553854/published/4-attic-shoebox-1.png?1743081915"/>
                 </div>
                 
-                <div class="section two">
-                    <img loading="lazy" class="image" src="https://www.ziyuangao.com/uploads/1/4/2/5/142553854/1-little-women-title-page1_orig.png"/>
-                    <img loading="lazy" class="image" src="https://www.ziyuangao.com/uploads/1/4/2/5/142553854/published/3-1attic-main-scene-finished-1.png?1743081912"/>
-                    <img loading="lazy" class="image" src="https://www.ziyuangao.com/uploads/1/4/2/5/142553854/published/4-attic-shoebox-1.png?1743081915"/>
-                </div>
-
-
-
-
                 <!--HIDDEN CONTAINER FOR SLIDESHOW-->
                 <div class="slideshow">
-                    <button class="close">&times;</button>
-                    <button class="next">&#10095;</button>
-                    <button class="prev">&#10094;</button>
+                    <button class="closeSlide">&times;</button>
+                    <button class="nextSlide">&#10095;</button>
+                    <button class="prevSlide">&#10094;</button>
                     <img loading="lazy" class="slideshow-img"/>
                 </div>
             </div>

@@ -59,7 +59,55 @@ body {
 }
 /* ---------------------------------------------- DEFAULT NAVBAR STYLING */
 
+/*visual development dropdown section*/
+#visDevNav {
+    position: relative;
+}
+#visDevNav:hover #visualDev-dropdown {
+    max-height: 320px;
+    transition: max-height 0.3s ease;
+    border: 1px solid black;
+}
+#visualDev-dropdown {
+    opacity: 1;
+    position: absolute;
+    top: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: var(--default-Background);
+    transition: max-height 0.3s ease;
+    width: 100%;
+    left: 0;
+    box-sizing: border-box;
+    max-height: 0;
+    overflow: hidden;
+    z-index: 5;
+}
 
+#visualDev-dropdown>li {
+    list-style: none;
+    width: 11vw;       /* take full width of dropdown */
+    display: flex;     
+    align-items: center; /* vertically center content */
+    justify-content: center; /* horizontally center content */
+    box-sizing: border-box;
+    position: relative;
+    left: -19.5px;
+    min-height: 80px;
+}
+#visualDev-dropdown>li>a {
+    text-align: center;
+    box-sizing: border-box;
+    min-height: 80px;  /* minimum height for readability */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
 
 #navbar a.active {
     color: var(--default-Blue);
@@ -130,11 +178,12 @@ body {
     right: -4.8vw;
 }
 
-#navList li {
+#navList>li {
     width: 16.666%;
     height: 100%;
     display: flex;
     box-sizing: border-box;
+    position: relative;
 }
 /* ADDRESSES ONLY IN PC DISPLAY */
 #navList a {
@@ -200,6 +249,7 @@ body {
     width: 100%;
     height: calc(40vh/6);
     box-sizing: border-box;
+    min-height: 30px;
 }
 
 /* DETERMINES WHETHER MOBILE OR PC DISPLAY (if screen is less than 1100px then transitions to mobile) */

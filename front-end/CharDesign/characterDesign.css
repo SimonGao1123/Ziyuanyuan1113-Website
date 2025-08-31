@@ -1,108 +1,45 @@
-/* ----------------------------------------------
-   Section One Layout (Character Design)
----------------------------------------------- */
-.section.one {
-  width: 100%;
-  padding-bottom: 50px; /* adjust inner spacing if desired */
+/* Now your grid sits inside .main */
+.sample-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
 }
 
 /* ----------------------------------------------
-   Main Preview Image
+   Hover over titles styling
 ---------------------------------------------- */
-.main-img {
-  position: relative;
-  height: 800px; /* adjust for your largest image height */
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
+.overlay-text:hover {
+    opacity: 1;
+    transition: var(--standard-Transition);
+} 
+
+
+.overlay-text {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--default-Blue);
+    font-size: 5vw;
+    opacity: 0;
+    background-color: var(--default-Background);
+    transition: var(--standard-Transition);
 }
 
-/* Prevent the main preview from becoming too small */
-.main-img img {
-  min-width: 300px;    /* never narrower than 300px */
-  min-height: 300px;   /* never shorter than 300px */
+/* combines text + image for hover overlay */
+.image-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
 }
-
-/* ----------------------------------------------
-   Thumbnail Selector Row
----------------------------------------------- */
-.img-selector {
-  width: 100%;
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
+.image-wrap img {
+    width: 100%;
+    height: 100%;
+    max-height: 500px;
+    object-fit: cover;
 }
-
-/* Ensure thumbnails in the selector stay a usable size */
-.img-selector img {
-  width: 90px;
-  height: 90px;
-  min-width: 60px;     /* never narrower than 60px */
-  min-height: 60px;    /* never shorter than 60px */
-  object-fit: cover;
-  cursor: pointer;
-}
-
-/* ----------------------------------------------
-   Navigation Buttons on Main Preview
----------------------------------------------- */
-.prev,
-.next {
-  position: absolute;
-  top: 0;
-  border: none;
-  background: transparent;
-  font-size: 3vw;
-  color: white;
-  width: 40%;
-  height: 100%;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 3vw;
-  opacity: 0;
-  transition: var(--standard-Transition);
-}
-
-.prev {
-  left: -10vw;
-  text-align: left;
-}
-
-.next {
-  right: -10vw;
-  text-align: right;
-}
-
-.prev:hover,
-.next:hover,
-.prev:hover .arrow,
-.next:hover .arrow {
-  opacity: 1;
-}
-
-.arrow {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 0.2em 0.5em;
-  border-radius: 4px;
-  opacity: 0;
-  transition: var(--standard-Transition);
-}
-
-/* ----------------------------------------------
-   Invisible Transition Helper
----------------------------------------------- */
-.invis {
-  opacity: 0;
-  transition: var(--standard-Transition);
-}
-
-
-
-
-

@@ -3,11 +3,13 @@
     <head>
         <meta charset="UTF-8" />
         <title>Character Design - Judy Ziyuan Gao</title>
+        <link rel="stylesheet" href="/front-end/styleVars.css"/> <!-- INCLUDES ALL THE STANDARD VARIABLES-->
         <link rel="stylesheet" href="characterDesign.css"/>
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--This improves SEO and makes the website the same scale no matter the device-->
         <meta name="description" content="Ziyuanyuan Art Portfolio" /> <!--Improves accessibility, description of contents of website-->
         <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-        <script src="charDesSlide.js" defer></script>
+        <script src="../ThumbSlide.js" defer></script>
         <script src="../navBar.js" defer></script>
 
     </head>
@@ -19,18 +21,24 @@
                 <div class="nav-content">
                     <h1 id="navHead">JUDY ZIYUAN GAO</h1>
 
-
-
-
                     <!-- Navbar for PC -->
                     <ul id="navList">
-                        <li><a   href="../index.html">GALLERY</a></li>
-                        <li><a   href="../VisualDev/visualDevelopment.html">VISUAL<br/>DEVELOPMENT</a></li>
-                        <li><a   class="active" href="characterDesign.html">CHARACTER<br/>DESIGN</a></li>
-                        <li><a   href="../Storyboard/storyboard.html">STORYBOARD</a></li>
-                        <li><a   href="../Illustration/illustration.html">ILLUSTRATION</a></li>
-                        <li><a   href="../About/about.html">ABOUT</a></li>
+                        <li><a href="../index.html">GALLERY</a></li>
+                        <li id="visDevNav"><a href="../VisualDev/visualDevelopment.html">VISUAL<br/>DEVELOPMENT</a>
+                            <ul id="visualDev-dropdown">
+                                <li><a href="../VisualDev/subVD/sub1VD.html">SUBPAGE 1</a></li>
+                                <li><a href="">SUBPAGE 2 (nothing)</a></li>
+                                <li><a href="">SUBPAGE 3 (nothing)</a></li>
+                                <li><a href="">SUBPAGE 4 (nothing)</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="active" href="characterDesign.html">CHARACTER<br/>DESIGN</a></li>
+                        <li><a href="../Storyboard/storyboard.html">STORYBOARD</a></li>
+                        <li><a href="../Illustration/illustration.html">ILLUSTRATION</a></li>
+                        <li><a href="../About/about.html">ABOUT</a></li>
                     </ul>
+
+                    
 
 
                     
@@ -39,38 +47,76 @@
                 <div id="navbarMob">
                     <button id="menuButton">☰</button>
                     <ul id="listDown">
-                        <li><a   href="../index.html">GALLERY</a></li>
-                        <li><a   href="../VisualDev/visualDevelopment.html">VISUAL<br/>DEVELOPMENT</a></li>
-                        <li><a   class="active" href="characterDesign.html">CHARACTER<br/>DESIGN</a></li>
-                        <li><a   href="../Storyboard/storyboard.html">STORYBOARD</a></li>
-                        <li><a   href="../Illustration/illustration.html">ILLUSTRATION</a></li>
-                        <li><a   href="../About/about.html">ABOUT</a></li>
+                        <li><a   href="index.html" class="active">GALLERY</a></li>
+                        <li><a   href="VisualDev/visualDevelopment.html">VISUAL DEVELOPMENT</a></li>
+                        <li><a   href="CharDesign/characterDesign.html">CHARACTER DESIGN</a></li>
+                        <li><a   href="Storyboard/storyboard.html">STORYBOARD</a></li>
+                        <li><a   href="Illustration/illustration.html">ILLUSTRATION</a></li>
+                        <li><a   href="About/about.html">ABOUT</a></li>
                     </ul>   
                 </div>
             </nav>
         </header>
 
-        <div class = "main">
-            <div id="gallery">
-                <div class="section one">
-                    <!-- default image to be shown in selector -->
-                    <div class="main-img">
-                        <button class="next"><span class="arrow">&#10095;</span></button>
-                        <button class="prev"><span class="arrow">&#10094;<span></button>
-                        <img loading="lazy" class = "default-selector" src="https://picsum.photos/seed/101/300/200"> 
-                    </div>
-                    <div class="img-selector">
-                        <!-- image slideshow underneath -->
-                        <img loading="lazy" src="https://picsum.photos/seed/101/300/200">
-                        <img loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLkYYQnnzSAvVowwxu3Qde4ePNDp0y68caIQ&s">
-                        <img loading="lazy" src="https://dummyimage.com/300x200/000/fff.png&text=Random+Image">
-                        <img loading="lazy" src="https://images.saatchiart.com/saatchi/85495/art/3406634/2476521-BIBDZXKS-7.jpg">
-                        <img loading="lazy" src="https://www.ziyuangao.com/uploads/1/4/2/5/142553854/1-little-women-title-page1_orig.png">
-                    </div>
-                </div>
+        <!-- IMAGES ARE NOT CROPPED AND ARE FULL SIZE TO ORIGINAL UNLIKE GALLERY -->
+        <main>
+            <div class = "main">
 
+                
+                <div class="sample-gallery">
+                    
+                    <div class="image-container">
+                        <a href="subCD/sub1CD.html"  >
+                            <div class="image-wrap">
+                                <img loading="lazy" class="image" src="https://static.vecteezy.com/system/resources/thumbnails/002/098/203/small_2x/silver-tabby-cat-sitting-on-green-background-free-photo.jpg">
+                                <div class="overlay-text">
+                                    <p>Sample Text</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="image-container">
+                        <a href=""  >
+                            <div class="image-wrap">
+                                <img loading="lazy" class="image" src="https://static.vecteezy.com/system/resources/thumbnails/002/098/203/small_2x/silver-tabby-cat-sitting-on-green-background-free-photo.jpg">
+
+                                <div class="overlay-text">
+                                    <p>Sample Text</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="image-container">
+                        <a href=""  >
+                            <div class="image-wrap">
+                                <img loading="lazy" class="image" src="https://static.vecteezy.com/system/resources/thumbnails/002/098/203/small_2x/silver-tabby-cat-sitting-on-green-background-free-photo.jpg">
+
+                                <div class="overlay-text">
+                                    <p>Sample Text</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="image-container">
+                        <a href=""  >
+                            <div class="image-wrap">
+                                <img loading="lazy" class="image" src="https://static.vecteezy.com/system/resources/thumbnails/002/098/203/small_2x/silver-tabby-cat-sitting-on-green-background-free-photo.jpg">
+
+                                <div class="overlay-text">
+                                    <p>Sample Text</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    
+                    <!-- ADD MORE .image-container HERE FOR FURTHER UPDATES-->
+                </div>
             </div>
-        </div>
+        </main>
 
         <footer>
             <div class="socials">

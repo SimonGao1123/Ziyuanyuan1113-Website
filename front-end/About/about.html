@@ -4,6 +4,8 @@
         <meta charset="UTF-8" />
         <title>About - Judy Ziyuan Gao</title>
         <link rel="stylesheet" href="about.css"/>
+        <link rel="stylesheet" href="/front-end/styleVars.css"/> <!-- INCLUDES ALL THE STANDARD VARIABLES-->
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--This improves SEO and makes the website the same scale no matter the device-->
         <meta name="description" content="Ziyuanyuan Art Portfolio" /> <!--Improves accessibility, description of contents of website-->
         <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
@@ -18,18 +20,24 @@
                 <div class="nav-content">
                     <h1 id="navHead">JUDY ZIYUAN GAO</h1>
 
-
-
-
                     <!-- Navbar for PC -->
                     <ul id="navList">
-                        <li><a   href="../index.html">GALLERY</a></li>
-                        <li><a   href="../VisualDev/visualDevelopment.html">VISUAL<br/>DEVELOPMENT</a></li>
-                        <li><a   href="../CharDesign/characterDesign.html">CHARACTER<br/>DESIGN</a></li>
-                        <li><a   href="../Storyboard/storyboard.html">STORYBOARD</a></li>
-                        <li><a   href="../Illustration/illustration.html">ILLUSTRATION</a></li>
-                        <li><a   class="active" href="about.html">ABOUT</a></li>
+                        <li><a href="../index.html">GALLERY</a></li>
+                        <li id="visDevNav"><a href="../VisualDev/visualDevelopment.html">VISUAL<br/>DEVELOPMENT</a>
+                            <ul id="visualDev-dropdown">
+                                <li><a href="../VisualDev/subVD/sub1VD.html">SUBPAGE 1</a></li>
+                                <li><a href="">SUBPAGE 2 (nothing)</a></li>
+                                <li><a href="">SUBPAGE 3 (nothing)</a></li>
+                                <li><a href="">SUBPAGE 4 (nothing)</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../CharDesign/characterDesign.html">CHARACTER<br/>DESIGN</a></li>
+                        <li><a href="../Storyboard/storyboard.html">STORYBOARD</a></li>
+                        <li><a href="../Illustration/illustration.html">ILLUSTRATION</a></li>
+                        <li><a class="active" href="about.html">ABOUT</a></li>
                     </ul>
+
+                    
 
 
                     
@@ -38,12 +46,12 @@
                 <div id="navbarMob">
                     <button id="menuButton">☰</button>
                     <ul id="listDown">
-                        <li><a   href="../index.html">GALLERY</a></li>
-                        <li><a   href="../VisualDev/visualDevelopment.html">VISUAL<br/>DEVELOPMENT</a></li>
-                        <li><a   href="../CharDesign/characterDesign.html">CHARACTER<br/>DESIGN</a></li>
-                        <li><a   href="../Storyboard/storyboard.html">STORYBOARD</a></li>
-                        <li><a   href="../Illustration/illustration.html">ILLUSTRATION</a></li>
-                        <li><a   class="active" href="about.html">ABOUT</a></li>
+                        <li><a   href="index.html" class="active">GALLERY</a></li>
+                        <li><a   href="VisualDev/visualDevelopment.html">VISUAL DEVELOPMENT</a></li>
+                        <li><a   href="CharDesign/characterDesign.html">CHARACTER DESIGN</a></li>
+                        <li><a   href="Storyboard/storyboard.html">STORYBOARD</a></li>
+                        <li><a   href="Illustration/illustration.html">ILLUSTRATION</a></li>
+                        <li><a   href="About/about.html">ABOUT</a></li>
                     </ul>   
                 </div>
             </nav>

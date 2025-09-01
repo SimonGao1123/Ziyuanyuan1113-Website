@@ -1,0 +1,18 @@
+[DONE] Gallery
+
+[DONE] Visual Dev (add dropdown menu to pc for VD links)
+- [ADD IMAGES] Sub 1 VD
+- Sub 2 VD
+- Sub 3 VD
+- Sub 4 VD
+
+[ADD IMAGES] StoryBoard
+
+Illustration
+
+CharDesign
+- Sub 1 CD
+- Sub 2 CD
+- Sub 3 CD
+
+[ADD LINKS] About

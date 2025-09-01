@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>SUB1 VD - Judy Ziyuan Gao</title>
-        <link rel="stylesheet" href="sub1VD.css"/>
-        <link rel="stylesheet" href="/front-end/styleVars.css"/> <!-- INCLUDES ALL THE STANDARD VARIABLES-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+        <title>SUB1 CD - Judy Ziyuan Gao</title>
+        <link rel="stylesheet" href="sub1CD.css"/>
+        <link rel="stylesheet" href="../../styleVars.css"/> <!-- INCLUDES ALL THE STANDARD VARIABLES-->
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--This improves SEO and makes the website the same scale no matter the device-->
-        <meta name="description" content="Ziyuanyuan Art Portfolio" /> <!--Improves accessibility, description of contents of website-->
+        <meta name="description" content="" /> <!--Improves accessibility, description of contents of website-->
         <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
         <script src="../../navBar.js" defer></script> <!-- uses exctly same navbar script as index.js so just reuse-->
-        <script src="sub1VDThumb.js" defer></script> <!-- uses exctly same navbar script as index.js so just reuse-->
-        <script src="sub1VDSlide.js" defer></script>
-    </head>
-    <body>
-        <!-- NAVBAR -->
+        
+</head>
+<body>
+    <!-- NAVBAR -->
         <header>
             <nav id = "navbar">
                 <!-- TO ENSURE MARGINS ARE SAME WITH REST OF PAGE -->
@@ -24,15 +23,15 @@
                     <!-- Navbar for PC -->
                     <ul id="navList">
                         <li><a href="../../index.html">GALLERY</a></li>
-                        <li id="visDevNav"><a class="active" href="../visualDevelopment.html">VISUAL<br/>DEVELOPMENT</a>
+                        <li id="visDevNav"><a href="../../VisualDev/visualDevelopment.html">VISUAL<br/>DEVELOPMENT</a>
                             <ul id="visualDev-dropdown">
-                                <li><a class="active" href="sub1VD.html">SUBPAGE 1</a></li>
+                                <li><a href="../../VisualDev/subVD/sub1VD.html">SUBPAGE 1</a></li>
                                 <li><a href="">SUBPAGE 2 (nothing)</a></li>
                                 <li><a href="">SUBPAGE 3 (nothing)</a></li>
                                 <li><a href="">SUBPAGE 4 (nothing)</a></li>
                             </ul>
                         </li>
-                        <li><a href="../../CharDesign/characterDesign.html">CHARACTER<br/>DESIGN</a></li>
+                        <li><a class="active" href="../characterDesign.html">CHARACTER<br/>DESIGN</a></li>
                         <li><a href="../../Storyboard/storyboard.html">STORYBOARD</a></li>
                         <li><a href="../../Illustration/illustration.html">ILLUSTRATION</a></li>
                         <li><a href="../../About/about.html">ABOUT</a></li>
@@ -58,42 +57,7 @@
             </nav>
         </header>
 
-        <div class="main">
-            <div id="gallery">
-                <!-- THE 'FIRST' AND 'ONE' CLASS IS TO PREPARE FOR FUTURE SECTIONS WITH DIFFERENT FORMATS -->
-                <div class="section one">
-                    <img loading="lazy" class="image" src="https://www.ziyuangao.com/uploads/1/4/2/5/142553854/1-little-women-title-page1_orig.png"/>
-                    <img loading="lazy" class="image" src="https://www.ziyuangao.com/uploads/1/4/2/5/142553854/published/3-1attic-main-scene-finished-1.png?1743081912"/>
-                    <img loading="lazy" class="image" src="https://www.ziyuangao.com/uploads/1/4/2/5/142553854/published/4-attic-shoebox-1.png?1743081915"/>
-                </div>
-                
-                <!--HIDDEN CONTAINER FOR SLIDESHOW-->
-                <div class="slideshow">
-                    <button class="closeSlide">&times;</button>
-                    <button class="nextSlide">&#10095;</button>
-                    <button class="prevSlide">&#10094;</button>
-                    <img loading="lazy" class="slideshow-img"/>
-                </div>
 
-                <!--Holds the thumbnail with images underneath-->
-                <div class="section two">
-                    <!-- default image to be shown in selector -->
-                    <div class="main-img">
-                        <button class="nextThumb"><span class="arrow">&#10095;</span></button>
-                        <button class="prevThumb"><span class="arrow">&#10094;<span></button>
-                        <img loading="lazy" class = "default-selector" src="https://www.ziyuangao.com/uploads/1/4/2/5/142553854/published/4-attic-shoebox-1.png?1743081915"> 
-                    </div>
-                    <div class="img-selector">
-                        <!-- image slideshow underneath -->
-                        <img loading="lazy" src="https://www.ziyuangao.com/uploads/1/4/2/5/142553854/published/4-attic-shoebox-1.png?1743081915">
-                        <img loading="lazy" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLkYYQnnzSAvVowwxu3Qde4ePNDp0y68caIQ&s">
-                        <img loading="lazy" src="https://dummyimage.com/300x200/000/fff.png&text=Random+Image">
-                        <img loading="lazy" src="https://images.saatchiart.com/saatchi/85495/art/3406634/2476521-BIBDZXKS-7.jpg">
-                        <img loading="lazy" src="https://www.ziyuangao.com/uploads/1/4/2/5/142553854/1-little-women-title-page1_orig.png">
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <footer>
             <div class="socials">
@@ -112,6 +76,5 @@
                 </a>
             </div>
         </footer>
-    </body>
+</body>
 </html>
-

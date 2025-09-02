@@ -6,15 +6,16 @@
 ---------------------------------------------- */
 :root {
     --default-Background: #FAF6EA;
-    --default-Blue: #5377d3;
+    --default-Blue: #3a55a0;
     --standard-Transition: opacity 0.2s ease;
-    
 }
 body {
     font-family: 'Nunito', sans-serif;
     background-color: var(--default-Background);
 }
-
+html, body {
+    min-height: 300px; /* cannot shrink more than this */
+}
 .main {
     width: 85%;
     margin: 150px auto 225px auto;
@@ -65,19 +66,20 @@ body {
 }
 #visDevNav:hover #visualDev-dropdown {
     max-height: 320px;
-    transition: max-height 0.3s ease;
-    border: 1px solid black;
+    opacity: 1;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 1px 1px var(--default-Blue);
 }
 #visualDev-dropdown {
-    opacity: 1;
+    opacity: 0;
     position: absolute;
-    top: 100%;
+    top: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background: var(--default-Background);
-    transition: max-height 0.3s ease;
+    transition: all 0.3s ease;
     width: 100%;
     left: 0;
     box-sizing: border-box;
@@ -106,7 +108,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid black;
+    box-shadow: inset 0 -1px 0 0 var(--default-Blue);
 }
 
 #navbar a.active {
@@ -221,11 +223,13 @@ body {
     align-items: center;
     flex-direction: column;
     position: relative;
-    
+        box-shadow: 0 0 1px 1px var(--default-Blue);
+
     /* beginning of animation (hidden and expands downwards) */
     overflow: hidden;
     max-height: 0;
-    transition: max-height 0.3s ease;
+    transition: all 0.3s ease;
+    opacity: 0;
 
     width: 300px;
     
@@ -242,10 +246,12 @@ body {
 /* slide down animation */
 #listDown.active {
     max-height: 40vh;
+    opacity: 1;
+    transition: all 0.3s ease;
 }
 
 #listDown li {
-    border: 1px solid black;
+    box-shadow: 0 0 1px 1px var(--default-Blue);
     width: 100%;
     height: calc(40vh/6);
     box-sizing: border-box;

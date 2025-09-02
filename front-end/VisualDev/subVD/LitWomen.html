@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Little Women (2025) - Judy Ziyuan Gao</title>
+        <link rel="stylesheet" href="LitWomen.css"/>
+        <link rel="stylesheet" href="/front-end/styleVars.css"/> <!-- INCLUDES ALL THE STANDARD VARIABLES-->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!--This improves SEO and makes the website the same scale no matter the device-->
+        <meta name="description" content="Ziyuanyuan Art Portfolio" /> <!--Improves accessibility, description of contents of website-->
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+        <script src="../../navBar.js" defer></script> <!-- uses exctly same navbar script as index.js so just reuse-->
+        <script src="LitWomenThumb.js" defer></script> <!-- uses exctly same navbar script as index.js so just reuse-->
+        <script src="LitWomenSlide.js" defer></script>
+    </head>
+    <body>
+        <!-- NAVBAR -->
+        <header>
+            <nav id = "navbar">
+                <!-- TO ENSURE MARGINS ARE SAME WITH REST OF PAGE -->
+                <div class="nav-content">
+                    <h1 id="navHead">JUDY ZIYUAN GAO</h1>
+
+                    <!-- Navbar for PC -->
+                    <ul id="navList">
+                        <li><a href="../../index.html">GALLERY</a></li>
+                        <li id="visDevNav"><a class="active" href="../visualDevelopment.html">VISUAL<br/>DEVELOPMENT</a>
+                            <ul id="visualDev-dropdown">
+                                <li><a class="active" href="LitWomen.html">Little Women (2025)</a></li>
+                                <li><a href="">SUBPAGE 2 (nothing)</a></li>
+                                <li><a href="">SUBPAGE 3 (nothing)</a></li>
+                                <li><a href="">SUBPAGE 4 (nothing)</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../../CharDesign/characterDesign.html">CHARACTER<br/>DESIGN</a></li>
+                        <li><a href="../../Storyboard/storyboard.html">STORYBOARD</a></li>
+                        <li><a href="../../Illustration/illustration.html">ILLUSTRATION</a></li>
+                        <li><a href="../../About/about.html">ABOUT</a></li>
+                    </ul>
+
+                    
+
+
+                    
+                </div>
+                <!--Dropdown Navbar Menu for Mobile with ☰ button -->
+                <div id="navbarMob">
+                    <button id="menuButton">☰</button>
+                    <ul id="listDown">
+                        <li><a   href="index.html" class="active">GALLERY</a></li>
+                        <li><a   href="VisualDev/visualDevelopment.html">VISUAL DEVELOPMENT</a></li>
+                        <li><a   href="CharDesign/characterDesign.html">CHARACTER DESIGN</a></li>
+                        <li><a   href="Storyboard/storyboard.html">STORYBOARD</a></li>
+                        <li><a   href="Illustration/illustration.html">ILLUSTRATION</a></li>
+                        <li><a   href="About/about.html">ABOUT</a></li>
+                    </ul>   
+                </div>
+            </nav>
+        </header>
+
+        <div class="main">
+            <div id="gallery">
+                <!-- THE 'FIRST' AND 'ONE' CLASS IS TO PREPARE FOR FUTURE SECTIONS WITH DIFFERENT FORMATS -->
+                <div class="section one">
+                    <img loading="lazy" class="image" src="LitWomenImgs/1.png"/>
+                    <img loading="lazy" class="image" src="LitWomenImgs/2.png"/>
+                    <img loading="lazy" class="image" src="LitWomenImgs/3.png"/>
+                </div> 
+                
+                <!--HIDDEN CONTAINER FOR SLIDESHOW-->
+                <div class="slideshow">
+                    <button class="closeSlide">&times;</button>
+                    <button class="nextSlide">&#10095;</button>
+                    <button class="prevSlide">&#10094;</button>
+                    <img loading="lazy" class="slideshow-img"/>
+                </div>
+
+                <!--Holds the thumbnail with images underneath-->
+                <div class="section two">
+                    <!-- default image to be shown in selector -->
+                    <div class="main-img">
+                        <button class="nextThumb"><span class="arrow">&#10095;</span></button>
+                        <button class="prevThumb"><span class="arrow">&#10094;<span></button>
+                        <img loading="lazy" class = "default-selector" src="LitWomenImgs/3. ATTIC SCENE SKETCH1.png"> 
+                    </div>
+                    <div class="img-selector">
+                        <!-- image slideshow underneath -->
+                        <img loading="lazy" src="LitWomenImgs/3. ATTIC SCENE SKETCH1.png">
+                        <img loading="lazy" src="LitWomenImgs/3. ATTIC SCENE SKETCH2.png">
+                        <img loading="lazy" src="LitWomenImgs/3. ATTIC SCENE SKETCHE3.png">
+                    </div>
+                </div>
+
+                <div class="section one"> <!-- Rest of section 1 images -->
+                    <script src="ImageDisplay.js"></script>
+                </div> 
+            </div>
+        </div>
+
+        <footer>
+            <div class="socials">
+                <a href="https://x.com/ziyuanyuan1113"  >
+                    <img loading="lazy" loading="lazy" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/x-social-media-black-icon.png" alt="Twitter" width="30px" height="30px">
+                </a>
+
+                <a href="https://www.instagram.com/ziyuanyuan1113/?hl=en"  >
+                    <img loading="lazy" loading="lazy" src="https://static.vecteezy.com/system/resources/thumbnails/018/930/460/small/instagram-logo-instagram-icon-transparent-free-png.png" alt="Instagram" width="60px" height="60px">
+                </a>
+                <a href="https://bsky.app/profile/ziyuanyuan1113.bsky.social"  >
+                    <img loading="lazy" loading="lazy" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/bluesky.svg" alt="Blue sky" width="30" height="30">
+                </a>
+                <a href="https://www.youtube.com/@ziyuanyuan1113"  >
+                    <img loading="lazy" loading="lazy" src="https://www.iconpacks.net/icons/1/free-youtube-icon-123-thumb.png" alt="YouTube" width="40px" height="40px">
+                </a>
+            </div>
+        </footer>
+    </body>
+</html>
+

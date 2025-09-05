@@ -11,13 +11,9 @@ window.addEventListener("load", () => {
     let currInd = 0;
 
     function showImg(index) {
-        slideshowImg.classList.add('invis');
-        setTimeout(() => {
-            currInd = index;
-            slideshowImg.src = imageArr[index];
-            slideshow.classList.add('show');
-            slideshowImg.classList.remove('invis');
-        }, 200);
+        currInd = index;
+        slideshowImg.src = imageArr[index];
+        slideshow.classList.add('show');
     }
 
     images.forEach((img, index) => {

@@ -1,7 +1,9 @@
-[DONE] Gallery
+[TWEAK] Gallery
+- Make spacing between hover images and normal images same
+- Make it rectangular no matter the screen width
 
 [DONE] Visual Dev (add dropdown menu to pc for VD links)
-- [TWEAK] Sub 1 VD
+- [DONE] Sub 1 VD
 - Sub 2 VD
 - Sub 3 VD
 - Sub 4 VD

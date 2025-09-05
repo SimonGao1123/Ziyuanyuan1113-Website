@@ -47,10 +47,9 @@
 
 /* contains the text when hovering over */
 .image-text-container {
-    display: inline-block;
     position: relative;
     width: 100%;
-    height: auto;   
+
 }
 
 .image-text-container:hover .hover-text {
@@ -58,6 +57,7 @@
     transition: var(--standard-Transition);
 
 }
+
 /* ----------------------------------------------
    Container for 4 images in grid
 ---------------------------------------------- */
@@ -69,10 +69,11 @@
 }
 
 .sample img {
-    width: 100%;
     height: 100%;     
     object-fit: cover;
-    object-position: top;
+    min-height: 30vh;
+    aspect-ratio: 16/9;
+    
 }
 
 /* ----------------------------------------------

@@ -6,7 +6,7 @@
 ---------------------------------------------- */
 :root {
     --default-Background: #FAF6EA;
-    --default-Blue: #3a55a0;
+    --default-Blue: rgb(20, 71, 105);
     --standard-Transition: opacity 0.2s ease;
 }
 body {
@@ -141,12 +141,20 @@ html, body {
 
 
 }
-
+@font-face {
+  font-family: 'Eurostile';
+  src: url('fonts/Eurostile.woff2') format('woff2'),
+       url('fonts/Eurostile.woff') format('woff'),
+       url('fonts/Eurostile.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 #navHead {
     margin: 0;
     font-size: clamp(32px, 2vw, 64px); 
     color: var(--default-Blue);
-    font-weight: normal;
+    font-weight: bold;
+    font-family: 'Eurostile', sans-serif;
     
 }
 
@@ -256,6 +264,7 @@ html, body {
     }
     #navHead {
         font-size: 5vw;
+        margin-left: 2vw;
     }
     #navbarMob {
         display: block;

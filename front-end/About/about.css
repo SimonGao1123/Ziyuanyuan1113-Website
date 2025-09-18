@@ -54,8 +54,8 @@
 }
 .button {
     background-color: var(--default-Blue);
-    padding: 1vh 0.7vw;
-    border-radius: 0.26vw;
+    padding: 1vh 1vw;
+    border-radius: 5px;
 }
 @media (min-width: 1200px) {
     .image img {
@@ -63,8 +63,7 @@
     }
 }
 .button a {
-    
-    font-size: clamp(0.7rem, 4vw, 1.8rem);
+    font-size: clamp(0.7rem, 1.2vw, 1.8rem);
 }
 .button a {
     color: white;

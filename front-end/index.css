@@ -11,21 +11,16 @@
     color: var(--default-Blue);
     font-size: 1.4rem;
 }
-
-/* ----------------------------------------------
-   Spacing between gallery sections
----------------------------------------------- */
-.padding{
-    margin-bottom: 6rem;
+.sample:not(:last-of-type) {
+    margin-bottom: 10rem;
 }
 
 /* ----------------------------------------------
    Only for Visual Development section for subpage links
 ---------------------------------------------- */
-.image-section a{
+.image-section>a{
     display: inline-block;
     width: 100%;
-    margin: 0;
     height: auto;
 }
 .hover-text{
@@ -47,15 +42,30 @@
 
 /* contains the text when hovering over */
 .image-text-container {
-    position: relative;
-    width: 100%;
-
+    position: relative;    /* needed for .hover-text absolute positioning */
+  width: 100%;
+  aspect-ratio: 16 / 9;  /* makes the box keep the 16:9 ratio */
+  overflow: hidden;      /* ensures object-fit:cover crops to the box */
 }
-
+.image-text-container img {
+  display: block;        /* removes inline gaps */
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;     /* cover the box, cropping if needed */
+  
+}
 .image-text-container:hover .hover-text {
     opacity: 1;
     transition: var(--standard-Transition);
 
+}
+.image-text-container > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
 }
 
 /* ----------------------------------------------
@@ -63,16 +73,16 @@
 ---------------------------------------------- */
 .image-section{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5px;
-    justify-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  justify-items: stretch;
 }
 
 .sample img {
-    height: 100%;     
+    width: 100%;         /* make them fill width of grid cell */
+    height: 100%;        /* natural aspect ratio */
     object-fit: cover;
-    min-height: 30vh;
-    aspect-ratio: 16/9;
+    aspect-ratio: 16/9;  /* keeps consistency */
     
 }
 

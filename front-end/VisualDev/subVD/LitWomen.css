@@ -172,7 +172,7 @@
   top: 0;
   border: none;
   background: transparent;
-  font-size: 3vw;
+  font-size: clamp(1rem, 30px, 2.5rem);
   color: white;
   width: 40%;
   height: 100%;
@@ -183,6 +183,7 @@
   padding: 0 3vw;
   opacity: 0;
   transition: var(--standard-Transition);
+  
 }
 
 .prevThumb {

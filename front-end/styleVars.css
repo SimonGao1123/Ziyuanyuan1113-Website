@@ -4,6 +4,11 @@
 /* ----------------------------------------------
    Global Resets & Base Styles
 ---------------------------------------------- */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;  /* no sideways scrolling */
+  margin: 0 auto;      /* center page */
+}
 :root {
     --default-Background: #FAF6EA;
     --default-Blue: rgb(20, 71, 105);
@@ -18,9 +23,8 @@ html, body {
 }
 .main {
     width: 85%;
-    margin: 150px auto 225px auto;
-    padding: 70px;
-
+    margin: 150px auto 225px auto;  /* top, auto horizontally, bottom */
+    padding: 70px 20px;   /* keep padding but make responsive */
 }
 
 /* ---------------------------------------------- DEFAULT SOCIAL ICON STYLING */
@@ -110,7 +114,8 @@ html, body {
     display: flex;
     align-items: center;
     position: fixed;
-    width: 100vw;
+    width: 100%;
+    margin: 0 auto;
     top: -17px;
     left: 0;
     padding-top: 25px;

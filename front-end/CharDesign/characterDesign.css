@@ -24,7 +24,7 @@
     align-items: center;
     justify-content: center;
     color: var(--default-Blue);
-    font-size: 5vw;
+    font-size: 3vw;
     opacity: 0;
     background-color: var(--default-Background);
     transition: var(--standard-Transition);

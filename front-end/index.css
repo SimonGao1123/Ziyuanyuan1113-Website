@@ -24,34 +24,34 @@
     height: auto;
 }
 .hover-text{
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    top:0;
-    left:0;
-    z-index: 2;
-    opacity: 0;
-    position: absolute;
-    display:flex;
-    justify-content: center;
+    display: flex;
     align-items: center;
+    text-align: center;
+    justify-content: center;
     color: var(--default-Blue);
-    background-color: var(--default-Background);
     font-size: 3vw;
+    opacity: 0;
+    background-color: var(--default-Background);
     transition: var(--standard-Transition);
 }
 
 /* contains the text when hovering over */
 .image-text-container {
-    position: relative;    /* needed for .hover-text absolute positioning */
+  position: relative;    /* needed for .hover-text absolute positioning */
   width: 100%;
-  aspect-ratio: 16 / 9;  /* makes the box keep the 16:9 ratio */
+  aspect-ratio: auto;  /* makes the box keep the 16:9 ratio */
   overflow: hidden;      /* ensures object-fit:cover crops to the box */
 }
 .image-text-container img {
   display: block;        /* removes inline gaps */
   width: 100%;
   height: 100%;
-  aspect-ratio: 16/9;
+  max-height: 500px;
   object-fit: cover;     /* cover the box, cropping if needed */
   
 }
@@ -74,7 +74,7 @@
 .image-section{
     display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 5px;
+  gap: 15px;
   justify-items: stretch;
 }
 
@@ -82,8 +82,6 @@
     width: 100%;         /* make them fill width of grid cell */
     height: 100%;        /* natural aspect ratio */
     object-fit: cover;
-    aspect-ratio: 16/9;  /* keeps consistency */
-    
 }
 
 /* ----------------------------------------------
@@ -100,5 +98,9 @@
     
 }
 
-
+@media (max-width: 1200px) {
+    .image-section {
+        grid-template-columns: 1fr;
+    }
+}
 

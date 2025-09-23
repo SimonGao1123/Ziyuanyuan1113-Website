@@ -1,6 +1,8 @@
 [TWEAK] Gallery
-- Make spacing between hover images and normal images same
-- Make it rectangular no matter the screen width
+- Keep navbar/name at the top, stays whenever reach the very top
+- Make Judy Ziyuan Gao Larger 
+- Make subheaders, smaller
+- Make "see all" in gallery smaller (keep main Judy Ziyuan Gao larger than subheaders)
 
 [DONE] Visual Dev (add dropdown menu to pc for VD links)
 - [DONE] Sub 1 VD

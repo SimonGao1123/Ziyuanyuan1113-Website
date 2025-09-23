@@ -23,7 +23,7 @@ html, body {
 }
 .main {
     width: 85%;
-    margin: 150px auto 225px auto;  /* top, auto horizontally, bottom */
+    margin: 10vh auto 225px auto;  /* top, auto horizontally, bottom */
     padding: 70px 20px;   /* keep padding but make responsive */
 }
 

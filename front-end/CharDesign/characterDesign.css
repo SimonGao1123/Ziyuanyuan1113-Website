@@ -4,6 +4,10 @@
 .section.one {
   width: 100%;
   padding-bottom: 50px; /* adjust inner spacing if desired */
+  
+}
+.main {
+  margin-top: 80px; /*alter the original margin top to move the first section up*/
 }
 
 /* ----------------------------------------------
